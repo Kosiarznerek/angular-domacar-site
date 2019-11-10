@@ -15,9 +15,14 @@
             [class.dropdown]="menuItem.children?.length > 0">
 
           <!-- Title -->
-          <a [routerLink]="menuItem.href">
+          <a *ngIf="menuItem.children?.length > 0; else noSubMenuLink" [routerLink]="menuItem.href">
             {{ menuItem.displayName }}
           </a>
+          <ng-template #noSubMenuLink>
+            <a [routerLink]="menuItem.href" [routerLinkActive]="'active'">
+              {{ menuItem.displayName }}
+            </a>
+          </ng-template>
 
           <!-- Submenu -->
           <ul *ngIf="menuItem.children?.length > 0" [class.is-expanded]="menuItem.isExpanded" class="dropdown-menu">
