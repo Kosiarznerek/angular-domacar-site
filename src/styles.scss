@@ -1,3 +1,13 @@
 @import '~bootstrap/scss/bootstrap-reboot';
 @import '~bootstrap/scss/bootstrap-grid';
+
+$fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
+$hamburger-layer-width: 20px !default;
+$hamburger-layer-height: 3px !default;
+$hamburger-layer-spacing: 3px !default;
+@import "~hamburgers/_sass/hamburgers/hamburgers";

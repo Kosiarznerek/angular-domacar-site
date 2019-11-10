@@ -3,27 +3,52 @@
 
     <!-- Brand name -->
     <div id="brand-name">
-      <a class="logo" href="/">DomaCar</a>
+      <a [routerLink]="'/'" class="logo">DomaCar</a>
     </div>
 
     <!-- Navigation -->
     <div id="main-navigation">
 
       <!-- Main menu -->
-      <ul id="main-menu">
-        <li>
-          <a href="#">Główna</a>
-        </li>
-        <li>
-          <a href="#">Sklep</a>
-        </li>
-        <li>
-          <a href="#">O nas</a>
-        </li>
-        <li>
-          <a href="#">Kontakt</a>
+      <ul [class.is-toggled-up]="isMenuToggledUp" id="main-menu">
+        <li (click)="menuItem.isExpanded = !menuItem.isExpanded" *ngFor="let menuItem of menuItems"
+            [class.dropdown]="menuItem.children?.length > 0">
+
+          <!-- Title -->
+          <a [routerLink]="menuItem.href">
+            {{ menuItem.displayName }}
+          </a>
+
+          <!-- Submenu -->
+          <ul *ngIf="menuItem.children?.length > 0" [class.is-expanded]="menuItem.isExpanded" class="dropdown-menu">
+            <li *ngFor="let subItem of menuItem.children">
+              <a [routerLink]="subItem.href">{{ subItem.displayName }}</a>
+            </li>
+          </ul>
+
         </li>
       </ul>
+
+      <!-- Cart -->
+      <div id="cart">
+        <a>
+          <i class="fas fa-shopping-cart"></i>
+        </a>
+
+        <!-- Cart content -->
+        <div>
+          Koszyk jest pusty
+        </div>
+
+      </div>
+
+      <!-- Mobile toggle -->
+      <div (click)="isMenuToggledUp = !isMenuToggledUp" [class.is-active]="!isMenuToggledUp"
+           class="hamburger hamburger--squeeze js-hamburger">
+        <div class="hamburger-box">
+          <div class="hamburger-inner"></div>
+        </div>
+      </div>
 
     </div>
 
