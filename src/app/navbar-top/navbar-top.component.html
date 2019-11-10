@@ -19,7 +19,7 @@
             {{ menuItem.displayName }}
           </a>
           <ng-template #noSubMenuLink>
-            <a [routerLink]="menuItem.href" [routerLinkActive]="'active'">
+            <a [routerLinkActive]="'active'" [routerLink]="menuItem.href">
               {{ menuItem.displayName }}
             </a>
           </ng-template>

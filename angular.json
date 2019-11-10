@@ -25,9 +25,11 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
+              "src/fonts",
               "src/assets"
             ],
             "styles": [
+              "src/fonts/museo-sans.scss",
               "src/styles.scss"
             ],
             "scripts": []

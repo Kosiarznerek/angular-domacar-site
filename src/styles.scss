@@ -11,3 +11,7 @@ $hamburger-layer-width: 20px !default;
 $hamburger-layer-height: 3px !default;
 $hamburger-layer-spacing: 3px !default;
 @import "~hamburgers/_sass/hamburgers/hamburgers";
+
+html, body {
+  font-family: museo-sans, serif;
+}
