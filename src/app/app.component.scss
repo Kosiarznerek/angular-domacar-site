@@ -1,6 +1,14 @@
 nav {
+
   position: fixed;
+  width: 100%;
   z-index: 1090;
+  box-shadow: 0 1px 0 rgba(0,0,0,.07);
+
+  > * {
+    display: grid;
+  }
+
 }
 
 footer {
