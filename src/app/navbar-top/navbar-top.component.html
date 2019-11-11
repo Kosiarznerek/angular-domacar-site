@@ -10,7 +10,7 @@
     <div id="main-navigation">
 
       <!-- Main menu -->
-      <ul [class.is-toggled-up]="isMenuToggledUp" id="main-menu">
+      <ul *ngIf="!isMenuToggledUp || !(isMobile$ | async)" [@slideUpDown]="isMenuToggledUp" id="main-menu">
         <li (click)="menuItem.isExpanded = !menuItem.isExpanded" *ngFor="let menuItem of menuItems"
             [class.dropdown]="menuItem.children?.length > 0">
 
@@ -25,7 +25,9 @@
           </ng-template>
 
           <!-- Submenu -->
-          <ul *ngIf="menuItem.children?.length > 0" [class.is-expanded]="menuItem.isExpanded" class="dropdown-menu">
+          <ul *ngIf="(menuItem.isExpanded || !(isMobile$ | async)) && menuItem.children?.length > 0"
+              [@slideUpDown]="menuItem.isExpanded"
+              class="dropdown-menu">
             <li *ngFor="let subItem of menuItem.children">
               <a [routerLink]="subItem.href">{{ subItem.displayName }}</a>
             </li>

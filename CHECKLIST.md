@@ -1,5 +1,5 @@
 [ ] Footer wysuwany tylko w wersji na desktop
-[ ] Submenu poprawić tak by było wysuwane
+[x] Submenu poprawić tak by było wysuwane
 [x] Czcionki ogarnąć
 
 # Base template link
