@@ -21,6 +21,13 @@
 
       max-width: 100%;
 
+      @media (max-width: 995px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
       /* Social */
       .footer-social-text {
         font-weight: bold;
@@ -32,27 +39,35 @@
         margin-right: 30px;
       }
 
-      .footer-social-icons a {
+      .footer-social-icons {
 
-        background-color: #1f1f1f;
-        display: block;
-        float: left;
-        width: 40px;
-        height: 40px;
-        text-align: center;
-        transition: all 250ms ease-in-out;
-        line-height: 40px;
-        margin-right: 20px;
-        color: #3c5c9e;
-        outline: 0;
-        text-decoration: none;
+        @media (max-width: 995px) {
+          margin-bottom: 15px;
+        }
 
-        &:hover {
+        a {
 
-          background-color: #3c5c9e;
+          background-color: #1f1f1f;
+          display: block;
+          float: left;
+          width: 40px;
+          height: 40px;
+          text-align: center;
+          transition: all 250ms ease-in-out;
+          line-height: 40px;
+          margin-right: 20px;
+          color: #3c5c9e;
+          outline: 0;
+          text-decoration: none;
 
-          > i {
-            color: #fff;
+          &:hover {
+
+            background-color: #3c5c9e;
+
+            > i {
+              color: #fff;
+            }
+
           }
 
         }
@@ -69,6 +84,11 @@
           text-align: left;
           position: relative;
 
+          @media (max-width: 780px) {
+            display: flex;
+            flex-direction: column;
+          }
+
           .form-control-wrap {
 
             width: auto;
@@ -76,6 +96,10 @@
             position: relative;
             text-align: left;
             float: left;
+
+            @media (max-width: 780px) {
+              display: flex;
+            }
 
             input {
               background-color: #1f1f1f;
@@ -128,6 +152,10 @@
             &:hover {
               color: #3c5c9e;
               background: #fff !important;
+            }
+
+            @media (max-width: 780px) {
+              display: flex;
             }
 
           }
@@ -201,7 +229,6 @@
       }
 
     }
-
 
   }
 
