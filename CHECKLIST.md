@@ -1,4 +1,4 @@
-[ ] Footer wysuwany tylko w wersji na desktop
+[x] Footer wysuwany tylko w wersji na desktop
 [x] Submenu poprawić tak by było wysuwane
 [x] Czcionki ogarnąć
 

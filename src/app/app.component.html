@@ -1,14 +1,17 @@
 <!-- Top navbar -->
-<nav>
+<nav #appNavbar>
   <app-navbar-top></app-navbar-top>
 </nav>
 
 <!-- Router outlet -->
-<div [ngStyle]="{ 'margin-bottom': (footerHeight$ | async) + 'px' }">
+<div [ngStyle]="{
+  'margin-top': (navbarHeight$ | async) + 'px',
+  'margin-bottom': (footerIsFixed$ | async) ? (footerHeight$ | async) + 'px' : '0px' }
+">
   <router-outlet></router-outlet>
 </div>
 
 <!-- Footer -->
-<footer #appFooter>
+<footer #appFooter [class.is-fixed]="footerIsFixed$ | async">
   <app-footer></app-footer>
 </footer>
