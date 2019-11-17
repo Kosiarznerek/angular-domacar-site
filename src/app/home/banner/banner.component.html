@@ -1,1 +1,15 @@
-<p>banner works!</p>
+<div #contentWrapper class="content-wrapper">
+
+  <div #backgroundOverlay class="background-overlay">
+    <img alt="" src="./../../../assets/images/slide1.jpg"/>
+    <img alt="" src="./../../../assets/images/slide2.jpg"/>
+    <img alt="" src="./../../../assets/images/slide3.jpg"/>
+  </div>
+
+  <div class="container">
+    <h1>Części od sprawdzonych sprzedawców</h1>
+    <a (click)="scrollDown()" class="tt_button">Przejdź niżej</a>
+    <a [routerLink]="'/generals/about'" class="tt_button_white">O nas</a>
+  </div>
+
+</div>

@@ -16,8 +16,8 @@ export class GeneralsComponent implements OnInit {
   public routerData$: Observable<IRouterData>;
 
   constructor(
-    private readonly router: Router,
-    private readonly activatedRoute: ActivatedRoute,
+    private readonly _router: Router,
+    private readonly _activatedRoute: ActivatedRoute,
   ) {
   }
 
@@ -26,11 +26,11 @@ export class GeneralsComponent implements OnInit {
     // Get router data
     this.routerData$ = merge(
       of(1),
-      this.router.events.pipe(
+      this._router.events.pipe(
         filter(v => v instanceof NavigationEnd)
       )
     ).pipe(
-      map(() => this.activatedRoute), // Listen to activateRoute
+      map(() => this._activatedRoute), // Listen to activateRoute
       map(route => {
         while (route.firstChild) {
           route = route.firstChild;
@@ -41,6 +41,9 @@ export class GeneralsComponent implements OnInit {
       mergeMap(route => route.data as Observable<IRouterData>),  // get the data
     );
 
+    // Trigger on scroll
+    this.onWindowScroll();
+
   }
 
   /**
@@ -48,10 +51,10 @@ export class GeneralsComponent implements OnInit {
    * @param event Event object
    */
   @HostListener('window:scroll', ['$event'])
-  onWindowScroll(event: Event): void {
+  onWindowScroll(event?: Event): void {
 
     const nativeElement: HTMLElement = this.parallaxOverlay.nativeElement;
-    const translate: number = this.rescale(window.scrollY, 0, nativeElement.clientHeight, -35, 30);
+    const translate: number = this._rescale(window.scrollY, 0, nativeElement.clientHeight, -35, 30);
     nativeElement.style.transform = `translate3d(0px, ${translate}px, 0px)`;
 
   }
@@ -64,7 +67,7 @@ export class GeneralsComponent implements OnInit {
    * @param outMin Output scale min
    * @param outMax Output scale max
    */
-  private rescale(num: number, inMin: number, inMax: number, outMin: number, outMax: number): number {
+  private _rescale(num: number, inMin: number, inMax: number, outMin: number, outMax: number): number {
 
     return (num - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
 

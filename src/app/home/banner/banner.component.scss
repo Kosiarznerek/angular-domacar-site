@@ -1,9 +1,112 @@
-p {
-  height: 250px;
+.content-wrapper {
+
+  height: calc(100vh - 89px);
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0;
   padding: 0;
   background-color: #f7f7f7;
+  position: relative;
+  overflow: hidden;
+
+  .background-overlay {
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: calc(100% + 100px);
+
+    img {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 0;
+      height: 100%;
+      transition: opacity ease-in-out 400ms;
+    }
+
+  }
+
+  .container {
+
+    z-index: 1;
+
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      text-align: left;
+      line-height: 58px;
+      letter-spacing: 0;
+      font-weight: 700;
+      font-size: 52px;
+      margin: 0;
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+      white-space: normal;
+      max-width: 565px;
+      margin-bottom: 40px;
+    }
+
+    .tt_button {
+
+      letter-spacing: 0px;
+      font-weight: 900;
+      margin: 0px;
+      border-radius: 0px;
+      padding: 17px 25px;
+      text-align: center !important;
+      line-height: initial !important;
+      border: 2px solid #3c5c9e;
+      background-color: #3c5c9e;
+      outline: none !important;
+      transition: 0.3s !important;
+      min-width: 170px;
+      font-size: 13px;
+      color: #fff;
+      text-transform: uppercase;
+      box-sizing: border-box;
+      cursor: pointer;
+      box-shadow: none;
+      text-decoration: none;
+      margin-right: 10px;
+
+      &:hover {
+        background: transparent;
+      }
+
+    }
+
+    .tt_button_white {
+
+      letter-spacing: 0px;
+      font-weight: 900;
+      margin: 0px;
+      border-radius: 0px;
+      padding: 17px 25px;
+      color: #3c5c9e;
+      text-align: center !important;
+      line-height: initial !important;
+      background: #fff;
+      border: 2px solid #fff;
+      outline: none !important;
+      transition: 0.3s !important;
+      min-width: 170px;
+      font-size: 13px;
+      text-transform: uppercase;
+      box-sizing: border-box;
+      cursor: pointer;
+      box-shadow: none;
+      text-decoration: none;
+
+      &:hover {
+        color: #fff;
+        background: transparent;
+      }
+
+    }
+
+  }
+
 }
