@@ -220,7 +220,8 @@
           text-decoration: none;
           background-color: transparent;
 
-          &:hover {
+          &:hover,
+          &.active {
             color: #3c5c9e;
           }
 

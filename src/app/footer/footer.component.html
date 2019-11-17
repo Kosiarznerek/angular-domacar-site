@@ -62,19 +62,29 @@
             <div class="menu-services-container">
               <ul class="menu">
                 <li>
-                  <a>O firmie</a>
+                  <a [routerLinkActive]="'active'" [routerLink]="'/generals/about'">
+                    O nas
+                  </a>
                 </li>
                 <li>
-                  <a>Płatności</a>
+                  <a [routerLinkActive]="'active'" [routerLink]="'/generals/payments'">
+                    Płatności
+                  </a>
                 </li>
                 <li>
-                  <a>Dostawa</a>
+                  <a [routerLinkActive]="'active'" [routerLink]="'/generals/shipments'">
+                    Dostawa
+                  </a>
                 </li>
                 <li>
-                  <a>Zwroty i reklamacje</a>
+                  <a [routerLinkActive]="'active'" [routerLink]="'/generals/returns-complaints'">
+                    Zwroty i reklamacje
+                  </a>
                 </li>
                 <li>
-                  <a>Polityka prywatności</a>
+                  <a [routerLinkActive]="'active'" [routerLink]="'/generals/privacy-policy'">
+                    Polityka prywatności
+                  </a>
                 </li>
               </ul>
             </div>

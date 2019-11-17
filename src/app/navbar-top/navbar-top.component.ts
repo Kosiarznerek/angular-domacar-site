@@ -38,7 +38,7 @@ export class NavbarTopComponent implements OnInit {
     this.menuItems = [
       {
         displayName: 'Główna',
-        href: '/',
+        href: '/home',
       },
       {
         displayName: 'Sklep',
@@ -63,11 +63,11 @@ export class NavbarTopComponent implements OnInit {
       },
       {
         displayName: 'O nas',
-        href: '#'
+        href: '/generals/about'
       },
       {
         displayName: 'Kontakt',
-        href: '#'
+        href: '/generals/contact'
       }
     ];
 
