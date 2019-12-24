@@ -73,9 +73,10 @@ section {
         display: block;
       }
 
-      a {
+      span {
 
         color: #2f2f2f;
+        cursor: pointer;
         background: none;
         border: 0;
         border-radius: 0;
@@ -108,11 +109,11 @@ section {
 
       }
 
-      &:last-child a {
+      &:last-child span {
         border-right: 0;
       }
 
-      &.vc_active a {
+      &.vc_active span {
         background-color: #3c5c9e;
         border: none;
         color: #fff;
@@ -126,12 +127,23 @@ section {
 
 /* Tabs output */
 .vc_tta-tabs-output {
-  height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
+
   background-color: #ffffff;
   width: 100%;
+
+  div {
+
+    transition: opacity 250ms ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+
+    &.vc_active {
+      opacity: 1;
+      height: 100%;
+      visibility: visible;
+    }
+
+  }
+
 }

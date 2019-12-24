@@ -11,6 +11,8 @@ import {FindUsComponent} from './find-us/find-us.component';
 import {HomeComponent} from './home.component';
 import {RouterModule} from '@angular/router';
 import {ServicesIconsComponent} from './services-icons/services-icons.component';
+import {VehicleComponent} from './search/vehicle/vehicle.component';
+import {PartsComponent} from './search/parts/parts.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,12 @@ import {ServicesIconsComponent} from './services-icons/services-icons.component'
     FindUsComponent,
     HomeComponent,
     ServicesIconsComponent,
+    VehicleComponent,
+    PartsComponent,
+  ],
+  entryComponents: [
+    PartsComponent,
+    VehicleComponent,
   ],
   imports: [
     CommonModule,

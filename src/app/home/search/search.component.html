@@ -7,25 +7,18 @@
       <!-- Tabs list -->
       <div class="vc_tta-tabs-container">
         <ul class="vc_tta-tabs-list">
-
-          <li class="vc_tta-tab vc_active">
-            <a href="#">
-              <span class="vc_tta-title-text">Części do pojazdu</span>
-            </a>
+          <li (click)="onTabClick(tab)" *ngFor="let tab of tabsList" [class.vc_active]="tab.isActive"
+              class="vc_tta-tab">
+            <span>{{ tab.displayName }}</span>
           </li>
-
-          <li class="vc_tta-tab">
-            <a href="#">
-              <span class="vc_tta-title-text">Wyszukiwarka części</span>
-            </a>
-          </li>
-
         </ul>
       </div>
 
       <!-- Tab output -->
       <div class="vc_tta-tabs-output">
-        Wyszukiwanie
+        <div *ngFor="let tab of tabsList" [class.vc_active]="tab.isActive">
+          <ng-template [ngComponentOutlet]="tab.component"></ng-template>
+        </div>
       </div>
 
     </div>
