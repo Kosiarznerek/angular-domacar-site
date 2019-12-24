@@ -10,6 +10,7 @@ import {CommonQuestionsComponent} from './common-questions/common-questions.comp
 import {FindUsComponent} from './find-us/find-us.component';
 import {HomeComponent} from './home.component';
 import {RouterModule} from '@angular/router';
+import {ServicesIconsComponent} from './services-icons/services-icons.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import {RouterModule} from '@angular/router';
     CommonQuestionsComponent,
     FindUsComponent,
     HomeComponent,
+    ServicesIconsComponent,
   ],
   imports: [
     CommonModule,

@@ -1,12 +1,15 @@
+/* Bootstrap grid system */
 @import '~bootstrap/scss/bootstrap-reboot';
 @import '~bootstrap/scss/bootstrap-grid';
 
+/* Fa icons */
 $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 @import '~@fortawesome/fontawesome-free/scss/regular';
 @import '~@fortawesome/fontawesome-free/scss/solid';
 @import '~@fortawesome/fontawesome-free/scss/brands';
 
+/* Hamburger menu */
 $hamburger-layer-width: 20px !default;
 $hamburger-layer-height: 3px !default;
 $hamburger-layer-spacing: 3px !default;
@@ -14,4 +17,25 @@ $hamburger-layer-spacing: 3px !default;
 
 html, body {
   font-family: museo-sans, serif;
+}
+
+.container {
+
+  @media (min-width: 576px) {
+    max-width: inherit;
+  }
+
+  @media (min-width: 768px) {
+    max-width: inherit;
+  }
+
+  @media (min-width: 1200px) {
+    max-width: 1240px;
+    padding: 0;
+  }
+
+  .row {
+    margin: 0;
+  }
+
 }
