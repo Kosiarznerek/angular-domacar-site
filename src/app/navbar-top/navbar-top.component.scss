@@ -50,8 +50,8 @@ div.wrapper-container {
 
       @media (max-width: $mobile-breakpoint) {
         position: absolute;
-        width: 100%;
-        left: 0;
+        width: calc(100% + 30px);
+        left: -15px;
         top: 89px;
         background: #ffffff;
         box-shadow: 0 1px 0 rgba(0, 0, 0, 0.07);
@@ -77,7 +77,7 @@ div.wrapper-container {
           color: #2f2f2f !important;
           font-size: 13px;
           opacity: 1;
-          margin: 0 15px;
+          margin: 0 30px;
           line-height: 1;
           transition: 0.25s;
           font-weight: 900;
@@ -128,7 +128,7 @@ div.wrapper-container {
           display: block;
           opacity: 0;
           visibility: hidden;
-          transform: translateY(10px);
+          transform: translateY(0px);
           padding: 15px 18px;
           border-radius: 0;
           box-shadow: none;
@@ -155,7 +155,7 @@ div.wrapper-container {
           @media (max-width: $mobile-breakpoint) {
             position: relative;
             top: 0;
-            left: 0;
+            left: 60px;
             visibility: visible;
             opacity: 1;
             float: none;
@@ -165,10 +165,12 @@ div.wrapper-container {
             width: 100%;
             overflow: hidden;
             padding-bottom: 0;
+            padding-left: 0;
+            margin: 0;
           }
 
           a {
-            padding: 7px 10px;
+            padding: 7px 0;
             color: #2f2f2f;
             margin: 0;
             line-height: 20px;

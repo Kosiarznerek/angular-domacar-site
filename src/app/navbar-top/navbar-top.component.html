@@ -1,63 +1,67 @@
 <div class="wrapper-container">
   <div class="container">
+    <div class="row">
+      <div class="col-12">
 
-    <!-- Brand name -->
-    <div id="brand-name">
-      <a [routerLink]="'/'" class="logo">DomaCar</a>
-    </div>
+        <!-- Brand name -->
+        <div id="brand-name">
+          <a [routerLink]="'/'" class="logo">DomaCar</a>
+        </div>
 
-    <!-- Navigation -->
-    <div id="main-navigation">
+        <!-- Navigation -->
+        <div id="main-navigation">
 
-      <!-- Main menu -->
-      <ul *ngIf="!isMenuToggledUp || !(isMobile$ | async)" [@slideUpDown]="isMenuToggledUp" id="main-menu">
-        <li (click)="menuItem.isExpanded = !menuItem.isExpanded" *ngFor="let menuItem of menuItems"
-            [class.dropdown]="menuItem.children?.length > 0">
+          <!-- Main menu -->
+          <ul *ngIf="!isMenuToggledUp || !(isMobile$ | async)" [@slideUpDown]="isMenuToggledUp" id="main-menu">
+            <li (click)="menuItem.isExpanded = !menuItem.isExpanded" *ngFor="let menuItem of menuItems"
+                [class.dropdown]="menuItem.children?.length > 0">
 
-          <!-- Title -->
-          <a *ngIf="menuItem.children?.length > 0; else noSubMenuLink" [routerLink]="menuItem.href">
-            {{ menuItem.displayName }}
-          </a>
-          <ng-template #noSubMenuLink>
-            <a [routerLinkActive]="'active'" [routerLink]="menuItem.href">
-              {{ menuItem.displayName }}
-            </a>
-          </ng-template>
+              <!-- Title -->
+              <a *ngIf="menuItem.children?.length > 0; else noSubMenuLink" [routerLink]="menuItem.href">
+                {{ menuItem.displayName }}
+              </a>
+              <ng-template #noSubMenuLink>
+                <a [routerLinkActive]="'active'" [routerLink]="menuItem.href">
+                  {{ menuItem.displayName }}
+                </a>
+              </ng-template>
 
-          <!-- Submenu -->
-          <ul *ngIf="(menuItem.isExpanded || !(isMobile$ | async)) && menuItem.children?.length > 0"
-              [@slideUpDown]="menuItem.isExpanded"
-              class="dropdown-menu">
-            <li *ngFor="let subItem of menuItem.children">
-              <a [routerLink]="subItem.href">{{ subItem.displayName }}</a>
+              <!-- Submenu -->
+              <ul *ngIf="(menuItem.isExpanded || !(isMobile$ | async)) && menuItem.children?.length > 0"
+                  [@slideUpDown]="menuItem.isExpanded"
+                  class="dropdown-menu">
+                <li *ngFor="let subItem of menuItem.children">
+                  <a [routerLink]="subItem.href">{{ subItem.displayName }}</a>
+                </li>
+              </ul>
+
             </li>
           </ul>
 
-        </li>
-      </ul>
+          <!-- Cart -->
+          <div id="cart">
+            <a>
+              <i class="fas fa-shopping-cart"></i>
+            </a>
 
-      <!-- Cart -->
-      <div id="cart">
-        <a>
-          <i class="fas fa-shopping-cart"></i>
-        </a>
+            <!-- Cart content -->
+            <div>
+              Koszyk jest pusty
+            </div>
 
-        <!-- Cart content -->
-        <div>
-          Koszyk jest pusty
+          </div>
+
+          <!-- Mobile toggle -->
+          <div (click)="isMenuToggledUp = !isMenuToggledUp" [class.is-active]="!isMenuToggledUp"
+               class="hamburger hamburger--squeeze js-hamburger">
+            <div class="hamburger-box">
+              <div class="hamburger-inner"></div>
+            </div>
+          </div>
+
         </div>
 
       </div>
-
-      <!-- Mobile toggle -->
-      <div (click)="isMenuToggledUp = !isMenuToggledUp" [class.is-active]="!isMenuToggledUp"
-           class="hamburger hamburger--squeeze js-hamburger">
-        <div class="hamburger-box">
-          <div class="hamburger-inner"></div>
-        </div>
-      </div>
-
     </div>
-
   </div>
 </div>

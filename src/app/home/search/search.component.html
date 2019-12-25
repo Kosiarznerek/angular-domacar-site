@@ -1,28 +1,26 @@
 <section>
   <div class="container">
-
-    <!-- Tabs -->
     <div class="row">
+      <div class="col-12">
 
-      <!-- Tabs list -->
-      <div class="vc_tta-tabs-container">
-        <ul class="vc_tta-tabs-list">
-          <li (click)="onTabClick(tab)" *ngFor="let tab of tabsList" [class.vc_active]="tab.isActive"
-              class="vc_tta-tab">
-            <span>{{ tab.displayName }}</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Tab output -->
-      <div class="vc_tta-tabs-output">
-        <div *ngFor="let tab of tabsList" [class.vc_active]="tab.isActive">
-          <ng-template [ngComponentOutlet]="tab.component"></ng-template>
+        <!-- Tabs list -->
+        <div class="vc_tta-tabs-container">
+          <ul class="vc_tta-tabs-list">
+            <li (click)="onTabClick(tab)" *ngFor="let tab of tabsList" [class.vc_active]="tab.isActive"
+                class="vc_tta-tab">
+              <span>{{ tab.displayName }}</span>
+            </li>
+          </ul>
         </div>
+
+        <!-- Tab output -->
+        <div class="vc_tta-tabs-output">
+          <div *ngFor="let tab of tabsList" [class.vc_active]="tab.isActive">
+            <ng-template [ngComponentOutlet]="tab.component"></ng-template>
+          </div>
+        </div>
+
       </div>
-
     </div>
-
-
   </div>
 </section>
