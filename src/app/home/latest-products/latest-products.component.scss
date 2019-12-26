@@ -69,6 +69,8 @@ section {
       flex-direction: column;
       height: calc(100% - 300px);
       justify-content: center;
+      padding-top: 15px;
+      padding-bottom: 15px;
 
       .product-name {
         padding: 0;
