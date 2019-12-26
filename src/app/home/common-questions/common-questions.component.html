@@ -1,1 +1,38 @@
-<p>common-questions works!</p>
+<section>
+  <div class="container">
+    <div class="row">
+
+      <!-- Questions -->
+      <div class="col-lg-6">
+        <h2>Masz pytania?</h2>
+        <p>
+          Poniżej znajdują się najcześciej zadawane pytania przez naszych klientów. Jeżeli nie znajdziesz odpowiedzi
+          skontaktuj się z nami.
+        </p>
+        <div *ngFor="let i of [1,2,3]" class="question-container">
+          <h4>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit?
+          </h4>
+          <p>
+            Cras vel lorem. Etiam pellentesque aliquet tellus. Phasellus pharetra nulla ac diam. Quisque semper justo at
+            risus. Donec venenatis, turpis vel hendrerit interdum, dui ligula ultricies purus.
+          </p>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-lg-6">
+        <h2>Skontakuj się</h2>
+        <p>
+          Naszym celem jest zapewnienie najlepszej obsługi klienta i terminowe udzielanie odpowiedzi na wszystkie
+          pytania.
+        </p>
+        <input placeholder="Twoje imię" type="text"/>
+        <input placeholder="Twój email" type="email"/>
+        <textarea placeholder="Napisz wiadomość"></textarea>
+        <a (click)="$event.preventDefault()" href="#">Wyślij wiadomość</a>
+      </div>
+
+    </div>
+  </div>
+</section>

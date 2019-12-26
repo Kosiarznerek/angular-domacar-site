@@ -12,6 +12,7 @@ import {ServicesIconsComponent} from './services-icons/services-icons.component'
 import {VehicleComponent} from './search/vehicle/vehicle.component';
 import {PartsComponent} from './search/parts/parts.component';
 import {RatingStarsComponent} from './latest-products/rating-stars/rating-stars.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {RatingStarsComponent} from './latest-products/rating-stars/rating-stars.
     CommonModule,
     RouterModule.forChild([
       {path: '', component: HomeComponent}
-    ])
+    ]),
+    ReactiveFormsModule
   ],
 })
 export class HomeModule {
