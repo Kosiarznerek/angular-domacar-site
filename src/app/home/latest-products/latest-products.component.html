@@ -1,1 +1,35 @@
-<p>latest-products works!</p>
+<section>
+  <div class="container">
+
+    <!-- Header -->
+    <div class="row">
+      <div class="col-12">
+        <h2>Najnowsze produkty</h2>
+        <p>Przeglądnij nasze najnowsze dostępne produkty i wybierz coś dla siebie.</p>
+      </div>
+    </div>
+
+    <!-- Products -->
+    <div class="row">
+      <div *ngFor="let product of latestProducts" class="col-sm-6 col-lg-3">
+        <div class="product-wrapper">
+
+          <!-- Image -->
+          <img [src]="product.imgSrc" alt="..."/>
+
+          <!-- Description -->
+          <div class="product-description">
+            <h2 class="product-name">{{ product.displayName }}</h2>
+            <p class="product-rating">
+              <app-rating-stars [currentValue]="product.rating" [maxValue]="5" [minValue]="0"></app-rating-stars>
+            </p>
+            <p class="product-category">{{ product.category }}</p>
+            <p class="product-price">{{ product.price }} {{ product.priceCurrency }}</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

@@ -1,13 +1,7 @@
-import {Component, OnInit, Type} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {VehicleComponent} from './vehicle/vehicle.component';
 import {PartsComponent} from './parts/parts.component';
-
-// Tab interface
-interface ITabItem {
-  displayName: string;
-  isActive: boolean;
-  component: Type<any>;
-}
+import {ITabItem} from './search.component.models';
 
 @Component({
   selector: 'app-search',
