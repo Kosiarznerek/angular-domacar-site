@@ -26,7 +26,7 @@
       font-size: 16px;
       color: #ffffff;
       text-align: left;
-      font-family: 'Montserrat', serif !important;
+      font-family: museo-sans;
       font-weight: 700;
       font-style: normal;
       margin: 0 0 10px;
@@ -106,15 +106,16 @@
       line-height: inherit;
       text-transform: uppercase;
       padding: 15px;
+      text-align: center;
     }
 
     p {
       font-size: 16px;
-      text-align: left;
       margin: 0;
       font-family: museo-sans;
       font-weight: 100;
-      padding: 0 15px 66px;
+      padding: 0 15px 75px;
+      text-align: center;
     }
 
     a {
