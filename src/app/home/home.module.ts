@@ -9,8 +9,6 @@ import {CommonQuestionsComponent} from './common-questions/common-questions.comp
 import {HomeComponent} from './home.component';
 import {RouterModule} from '@angular/router';
 import {ServicesIconsComponent} from './services-icons/services-icons.component';
-import {VehicleComponent} from './search/vehicle/vehicle.component';
-import {PartsComponent} from './search/parts/parts.component';
 import {RatingStarsComponent} from './latest-products/rating-stars/rating-stars.component';
 import {ReactiveFormsModule} from '@angular/forms';
 
@@ -24,13 +22,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     CommonQuestionsComponent,
     HomeComponent,
     ServicesIconsComponent,
-    VehicleComponent,
-    PartsComponent,
     RatingStarsComponent,
-  ],
-  entryComponents: [
-    PartsComponent,
-    VehicleComponent,
   ],
   imports: [
     CommonModule,

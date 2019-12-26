@@ -21,6 +21,9 @@ html, body {
 
 .container {
 
+  padding-right: 30px;
+  padding-left: 30px;
+
   @media (min-width: 576px) {
     max-width: inherit;
   }
@@ -31,11 +34,6 @@ html, body {
 
   @media (min-width: 1200px) {
     max-width: 1240px;
-    padding: 0;
-  }
-
-  .row {
-    margin: 0;
   }
 
 }
