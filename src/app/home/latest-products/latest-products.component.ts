@@ -17,7 +17,7 @@ export class LatestProductsComponent implements OnInit {
     this.latestProducts = new Array(8).fill(0).map((v, i) => ({
       displayName: [
         'Przykładowy produkt ze sklepu',
-        'Przykładowy produkt ze sklepu',
+        'Przykładowy produkt ze sklepu o bardzo długiej nazwie',
       ][Math.floor(Math.random() * 2)],
       rating: Math.floor(Math.random() * 2) + 3,
       price: Math.floor(Math.random() * 100) + 100,
