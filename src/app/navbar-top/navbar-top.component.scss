@@ -218,6 +218,14 @@ div.wrapper-container {
         text-decoration: none;
       }
 
+      @media (min-width: $mobile-breakpoint) {
+        &:hover div {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0px);
+        }
+      }
+
       > div {
         color: #2f2f2f !important;
         background-color: #ffffff !important;
@@ -234,16 +242,11 @@ div.wrapper-container {
         opacity: 0;
         visibility: hidden;
         transform: translateY(10px);
+        border: 1px solid rgba(0, 0, 0, .1);
         border-top: 3px solid #3c5c9e;
         top: 93px;
-      }
-
-      @media (min-width: $mobile-breakpoint) {
-        &:hover div {
-          opacity: 1;
-          visibility: visible;
-          transform: translateY(0px);
-        }
+        max-height: calc(100vh - 90px);
+        overflow: auto;
       }
 
     }

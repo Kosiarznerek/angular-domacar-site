@@ -1,0 +1,46 @@
+<!-- Empty cart -->
+<p *ngIf="cartData.products.length === 0; else cartTemplate" class="empty-cart">
+  Koszyk jest pusty
+</p>
+
+<!-- Cart data -->
+<ng-template #cartTemplate>
+  <ul class="cart_list">
+
+    <!-- Products -->
+    <li *ngFor="let product of cartData.products" class="cart-item-list">
+      <a (click)="$event.preventDefault()" class="cart-thumb" href="#">
+        <img [src]="product.imageSrc" alt="">
+      </a>
+      <div class="cart-desc">
+        <a (click)="$event.preventDefault()" class="cart-item" href="#">
+          {{ product.displayName }}
+        </a>
+        <span class="product-quantity">
+          <span>{{ product.amount }} × </span>
+          <span>
+            {{ product.price | number : '1.2-2' }}
+            {{ product.priceCurrency }}
+          </span>
+        </span>
+      </div>
+    </li>
+
+    <!-- Subtotal -->
+    <li class="subtotal">
+      <span>
+        <strong>Suma:</strong>
+        <span class="amount">
+          {{ cartData.sum | number : '1.2-2' }}
+          {{ cartData.sumCurrency }}
+        </span>
+      </span>
+    </li>
+
+    <!-- Buttons -->
+    <li class="buttons">
+      <a (click)="$event.preventDefault()" href="#">Zobacz koszyk</a>
+    </li>
+
+  </ul>
+</ng-template>
