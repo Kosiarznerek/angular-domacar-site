@@ -18,7 +18,7 @@ import {IRouterData} from './generals.module.models';
             pathMatch: 'full',
             data: {
               breadcrumb: 'O nas',
-              parallaxSource: '/assets/images/parallax1.jpg'
+              parallaxSource: '/assets/images/parallax/parallax1.jpg'
             } as IRouterData,
             loadChildren: () => import('./about/about.module').then(r => r.AboutModule)
           },
@@ -27,7 +27,7 @@ import {IRouterData} from './generals.module.models';
             pathMatch: 'full',
             data: {
               breadcrumb: 'Kontakt',
-              parallaxSource: '/assets/images/parallax2.jpg'
+              parallaxSource: '/assets/images/parallax/parallax2.jpg'
             } as IRouterData,
             loadChildren: () => import('./contact/contact.module').then(r => r.ContactModule)
           },
@@ -36,7 +36,7 @@ import {IRouterData} from './generals.module.models';
             pathMatch: 'full',
             data: {
               breadcrumb: 'Płatności',
-              parallaxSource: '/assets/images/parallax3.jpg'
+              parallaxSource: '/assets/images/parallax/parallax3.jpg'
             } as IRouterData,
             loadChildren: () => import('./payments/payments.module').then(r => r.PaymentsModule)
           },
@@ -45,7 +45,7 @@ import {IRouterData} from './generals.module.models';
             pathMatch: 'full',
             data: {
               breadcrumb: 'Dostawa',
-              parallaxSource: '/assets/images/parallax4.jpg'
+              parallaxSource: '/assets/images/parallax/parallax4.jpg'
             } as IRouterData,
             loadChildren: () => import('./shipments/shipments.module').then(r => r.ShipmentsModule)
           },
@@ -54,7 +54,7 @@ import {IRouterData} from './generals.module.models';
             pathMatch: 'full',
             data: {
               breadcrumb: 'Zwroty i reklamacje',
-              parallaxSource: '/assets/images/parallax1.jpg'
+              parallaxSource: '/assets/images/parallax/parallax1.jpg'
             } as IRouterData,
             loadChildren: () => import('./returns-complaints/returns-complaints.module').then(r => r.ReturnsComplaintsModule)
           },
@@ -63,7 +63,7 @@ import {IRouterData} from './generals.module.models';
             pathMatch: 'full',
             data: {
               breadcrumb: 'Polityka prywatności',
-              parallaxSource: '/assets/images/parallax2.jpg'
+              parallaxSource: '/assets/images/parallax/parallax2.jpg'
             } as IRouterData,
             loadChildren: () => import('./privacy-policy/privacy-policy.module').then(r => r.PrivacyPolicyModule)
           },
