@@ -39,20 +39,21 @@
           </ul>
 
           <!-- Cart -->
-          <div id="cart">
+          <div (click)="onCartIconClick()" id="cart">
+
             <a>
               <i class="fas fa-shopping-cart"></i>
             </a>
 
             <!-- Cart content -->
-            <div>
+            <div *ngIf="!isCartListToggledUp || !(isMobile$ | async)" [@slideUpDown]="isCartListToggledUp">
               <app-cart></app-cart>
             </div>
 
           </div>
 
           <!-- Mobile toggle -->
-          <div (click)="isMenuToggledUp = !isMenuToggledUp" [class.is-active]="!isMenuToggledUp"
+          <div (click)="onMenuIconClick()" [class.is-active]="!isMenuToggledUp"
                class="hamburger hamburger--squeeze js-hamburger">
             <div class="hamburger-box">
               <div class="hamburger-inner"></div>

@@ -1,11 +1,11 @@
 // Navbar base item interface
-interface INavbarBaseItem {
+export interface INavbarBaseItem {
   displayName: string;
   href: string;
 }
 
 // Navbar item interface
-interface INavbarItem {
+export interface INavbarItem {
   displayName: string;
   isExpanded?: boolean;
   children: INavbarBaseItem[];
