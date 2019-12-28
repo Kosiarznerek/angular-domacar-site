@@ -17,7 +17,7 @@ export class CartComponent implements OnInit {
     this.cartData = {
       sum: Math.floor(Math.random() * 1000) + 100,
       sumCurrency: 'zł',
-      products: new Array(30).fill(0).map((v, i) => ({
+      products: new Array(3).fill(0).map((v, i) => ({
         displayName: `Przykładowsa das das das das das das das das day produkt ${i + 1}`,
         imageSrc: `../../../assets/images/products/product${i % 8 + 1}.png`,
         price: Math.floor(Math.random() * 1000) + 100,
