@@ -24,7 +24,9 @@
               <app-rating-stars [currentValue]="product.rating" [maxValue]="5" [minValue]="0"></app-rating-stars>
             </p>
             <p class="product-category">{{ product.category }}</p>
-            <p class="product-price">{{ product.price }} {{ product.priceCurrency }}</p>
+            <p class="product-price">
+              {{ product.price | number : '1.2-2' }} {{ product.priceCurrency }}
+            </p>
           </div>
 
         </div>
