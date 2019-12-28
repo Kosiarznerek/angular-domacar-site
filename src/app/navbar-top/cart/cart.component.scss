@@ -18,6 +18,20 @@
   font-size: 14px;
   min-width: 337px;
   display: block;
+  max-height: 250px;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: white;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #3c5c9e;
+  }
 
   li {
     clear: both;
@@ -27,13 +41,11 @@
   .cart-item-list {
 
     padding: 0;
-    margin: 0 0 15px;
+    margin: 0;
     list-style: none;
     background: none;
-
-    &:first-child {
-      margin: 0;
-    }
+    display: inline-block;
+    width: 100%;
 
     /* Thumbnail */
     .cart-thumb {
@@ -101,60 +113,58 @@
 
   }
 
-  /* Subtotal */
-  .subtotal {
+}
 
-    padding: 0;
-    margin: 15px 0;
-    list-style: none;
-    background: none;
-    text-transform: capitalize;
-    float: left;
-    width: 100%;
+/* Subtotal */
+.subtotal {
 
-    .amount {
-      font-weight: bold;
-      float: right;
-      margin-right: 2px;
-    }
+  padding: 0;
+  margin: 15px 0;
+  background: none;
+  text-transform: capitalize;
+  width: 100%;
+  display: block;
 
+  .amount {
+    font-weight: bold;
+    float: right;
+    margin-right: 2px;
   }
 
-  /* Buttons */
-  .buttons {
+}
 
-    padding: 0;
+/* Buttons */
+.buttons {
+
+  padding: 0;
+  list-style: none;
+  background: none;
+
+  a {
+
+    letter-spacing: 0px;
+    font-weight: 900;
     margin: 15px 0 0;
-    list-style: none;
-    background: none;
+    border-radius: 0px;
+    padding: 17px 25px;
+    color: #3c5c9e;
+    text-align: center !important;
+    line-height: initial !important;
+    background: #fff;
+    border: 2px solid #3c5c9e;
+    outline: none !important;
+    transition: 0.3s !important;
+    font-size: 14px;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    cursor: pointer;
+    box-shadow: none;
+    text-decoration: none;
+    display: block;
 
-    a {
-
-      letter-spacing: 0px;
-      font-weight: 900;
-      margin: 0px;
-      border-radius: 0px;
-      padding: 17px 25px;
-      color: #3c5c9e;
-      text-align: center !important;
-      line-height: initial !important;
-      background: #fff;
-      border: 2px solid #3c5c9e;
-      outline: none !important;
-      transition: 0.3s !important;
-      font-size: 14px;
-      text-transform: uppercase;
-      box-sizing: border-box;
-      cursor: pointer;
-      box-shadow: none;
-      text-decoration: none;
-      display: block;
-
-      &:hover {
-        color: #fff;
-        background: #3c5c9e;
-      }
-
+    &:hover {
+      color: #fff;
+      background: #3c5c9e;
     }
 
   }

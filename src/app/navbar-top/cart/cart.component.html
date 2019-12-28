@@ -5,9 +5,9 @@
 
 <!-- Cart data -->
 <ng-template #cartTemplate>
-  <ul class="cart_list">
 
-    <!-- Products -->
+  <!-- Cart list -->
+  <ul class="cart_list">
     <li *ngFor="let product of cartData.products" class="cart-item-list">
       <a (click)="$event.preventDefault()" class="cart-thumb" href="#">
         <img [src]="product.imageSrc" alt="">
@@ -25,22 +25,20 @@
         </span>
       </div>
     </li>
-
-    <!-- Subtotal -->
-    <li class="subtotal">
-      <span>
-        <strong>Suma:</strong>
-        <span class="amount">
-          {{ cartData.sum | number : '1.2-2' }}
-          {{ cartData.sumCurrency }}
-        </span>
-      </span>
-    </li>
-
-    <!-- Buttons -->
-    <li class="buttons">
-      <a (click)="$event.preventDefault()" href="#">Zobacz koszyk</a>
-    </li>
-
   </ul>
+
+  <!-- Subtotal -->
+  <span class="subtotal">
+      <strong>Suma:</strong>
+      <span class="amount">
+        {{ cartData.sum | number : '1.2-2' }}
+        {{ cartData.sumCurrency }}
+      </span>
+  </span>
+
+  <!-- Buttons -->
+  <span class="buttons">
+    <a (click)="$event.preventDefault()" href="#">Zobacz koszyk</a>
+  </span>
+
 </ng-template>

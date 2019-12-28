@@ -237,7 +237,7 @@ div.wrapper-container {
         position: absolute;
         margin-top: -3px !important;
         box-shadow: none;
-        padding: 25px !important;
+        padding: 15px 18px;
         right: 0px;
         cursor: initial;
         font-size: 14px;
@@ -250,8 +250,7 @@ div.wrapper-container {
         border: 1px solid rgba(0, 0, 0, .1);
         border-top: 3px solid #3c5c9e;
         top: 93px;
-        max-height: calc(100vh - 90px);
-        overflow: auto;
+        overflow: hidden;
 
         @media (max-width: $mobile-breakpoint) {
 
@@ -260,14 +259,14 @@ div.wrapper-container {
           width: calc(100% + 30px);
           opacity: 1;
           visibility: visible;
-          overflow: hidden;
           padding: 0 !important;
           margin: 0 !important;
           border: 0;
 
           app-cart {
             display: block;
-            padding: 25px;
+            padding: 0 30px 25px;
+            padding-bottom: 15px;
           }
 
         }
@@ -279,9 +278,7 @@ div.wrapper-container {
     /* Hamburger */
     .hamburger {
 
-      padding: 0 10px;
-      padding-top: 35px;
-      padding-bottom: 29px;
+      padding: 35px 0 29px 10px;
 
       @media (min-width: $mobile-breakpoint) {
         display: none;
