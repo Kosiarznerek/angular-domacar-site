@@ -38,7 +38,9 @@
 
   <!-- Buttons -->
   <span class="buttons">
-    <a (click)="$event.preventDefault()" href="#">Zobacz koszyk</a>
+    <a (click)="$event.preventDefault()" [routerLink]="'/cart/preview'">
+      Zobacz koszyk
+    </a>
   </span>
 
 </ng-template>

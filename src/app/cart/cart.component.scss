@@ -1,0 +1,57 @@
+.single-page-heading {
+
+  position: relative;
+  overflow: hidden;
+  padding: 90px 0 90px 0;
+  background: rgba(0, 0, 0, 0.05);
+
+  .parallax-overlay {
+    background-color: #f7f7f7;
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .container {
+
+    position: relative;
+
+    .breadcrumbs {
+
+      color: #ffffff;
+      text-align: left;
+      max-width: 100%;
+      padding: 0;
+      padding-left: 15px;
+      margin: 0;
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 10px;
+
+      span {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+
+    }
+
+    .section-heading {
+      text-align: left;
+      max-width: 100%;
+      padding-left: 15px;
+      margin: 0;
+      line-height: 1;
+      letter-spacing: -0.7px;
+      font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 34px;
+      text-transform: uppercase;
+    }
+
+  }
+
+}

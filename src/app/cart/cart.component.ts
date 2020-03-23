@@ -1,14 +1,14 @@
 import {Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
+import {merge, Observable, of} from 'rxjs';
+import {IRouterData} from '../generals/generals.module.models';
 import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 import {filter, map, mergeMap} from 'rxjs/operators';
-import {IRouterData} from './generals.module.models';
-import {merge, Observable, of} from 'rxjs';
 
 @Component({
-  templateUrl: './generals.component.html',
-  styleUrls: ['./generals.component.scss']
+  templateUrl: './cart.component.html',
+  styleUrls: ['./cart.component.scss']
 })
-export class GeneralsComponent implements OnInit {
+export class CartComponent implements OnInit {
 
   // Component data
   @ViewChild('parallaxOverlay', {static: true}) parallaxOverlay: ElementRef;

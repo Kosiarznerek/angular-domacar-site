@@ -1,0 +1,22 @@
+<!-- Parallax header -->
+<div class="single-page-heading">
+
+  <!-- Background image -->
+  <div #parallaxOverlay [ngStyle]="{ 'background-image': 'url(' + (routerData$ | async).parallaxSource + ')'}"
+       class="parallax-overlay">
+  </div>
+
+  <!-- Title -->
+  <div class="container">
+    <p class="breadcrumbs">
+      Koszyk<span class="fa fa-angle-right"></span>{{ (routerData$ | async).breadcrumb }}
+    </p>
+    <h1 class="section-heading" style=" color:#ffffff;">
+      {{ (routerData$ | async).breadcrumb }}
+    </h1>
+  </div>
+
+</div>
+
+<!-- Router outlet -->
+<router-outlet></router-outlet>
