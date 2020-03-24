@@ -1,3 +1,7 @@
+[ ] Skaczące szerokości kolumn przy koszyku
+[ ] Obsługa pustego koszyka
+[ ] RWD podglądu koszyka
+
 [ ] Rozplanować routing
 [ ] Asynchroniczne ładowanie produktów
 [ ] Dropdowny w wyszukiwarkach na głownej stronie
