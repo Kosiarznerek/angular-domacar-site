@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
-import {ICartData} from './cart-store.service.models';
+import {ICartData, ICartProduct} from './cart-store.service.models';
+import {map} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,7 @@ export class CartStoreService {
       sum: null,
       sumCurrency: 'zł',
       products: new Array(3).fill(0).map((v, i) => ({
+        id: i + 1,
         displayName: `Przykładowy produkt testowy ${i + 1}`,
         imageSrc: `../../../assets/images/products/product${i % 8 + 1}.png`,
         price: Math.floor(Math.random() * 1000) + 100,
@@ -53,7 +55,55 @@ export class CartStoreService {
    */
   public get data(): Observable<ICartData> {
 
-    return this._cartData.asObservable();
+    return this._cartData.asObservable().pipe(map(v => ({
+      sum: v.sum,
+      sumCurrency: v.sumCurrency,
+      products: v.products.map(p => ({
+        id: p.id,
+        displayName: p.displayName,
+        imageSrc: p.imageSrc,
+        price: p.price,
+        priceCurrency: p.priceCurrency,
+        amount: p.amount
+      }))
+    })));
+
+  }
+
+  /**
+   * Updates product in store
+   * @param product Product to update with new data
+   */
+  public updateProduct(product: Partial<ICartProduct> & Pick<ICartProduct, 'id'>): void {
+
+    // Getting current value
+    const {value} = this._cartData;
+
+    // Update product
+    Object.assign(
+      value.products.find(v => v.id === product.id),
+      product
+    );
+
+    // Recalculate sum
+    this._recalculateSum();
+
+  }
+
+  /**
+   * Removes product
+   * @param id Product id to remove
+   */
+  public removeProduct(id: ICartProduct['id']): void {
+
+    // Getting current value
+    const {value} = this._cartData;
+
+    // Filtering products
+    value.products = value.products.filter(v => v.id !== id);
+
+    // Recalculate sum
+    this._recalculateSum();
 
   }
 

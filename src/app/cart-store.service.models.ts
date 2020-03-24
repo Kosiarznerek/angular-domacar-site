@@ -2,11 +2,15 @@
 export interface ICartData {
   sum: number;
   sumCurrency: string;
-  products: Array<{
-    displayName: string;
-    imageSrc: string;
-    price: number;
-    priceCurrency: string;
-    amount: number;
-  }>;
+  products: ICartProduct[];
+}
+
+// Cart product interface
+export interface ICartProduct {
+  id: number;
+  displayName: string;
+  imageSrc: string;
+  price: number;
+  priceCurrency: string;
+  amount: number;
 }

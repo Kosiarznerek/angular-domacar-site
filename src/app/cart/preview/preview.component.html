@@ -1,1 +1,72 @@
-<p>Tutaj będzie znajdować się lista produktów w koszyku</p>
+<section>
+  <div class="container">
+    <div class="row">
+
+      <!-- Products -->
+      <table class="shop_table col-12">
+        <thead>
+        <tr>
+          <th class="product-remove">&nbsp;</th>
+          <th class="product-thumbnail">&nbsp;</th>
+          <th class="product-name">Produkt</th>
+          <th class="product-price">Cena</th>
+          <th class="product-quantity">Ilość</th>
+          <th class="product-subtotal">Suma</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="cart_item" *ngFor="let product of (cartData$ | async).products; trackBy: trackProductBy">
+          <td class="product-remove">
+            <a href="#" class="remove" (click)="onProductRemoveClick($event, product)">×</a>
+          </td>
+          <td class="product-thumbnail">
+            <img [src]="product.imageSrc" class="thumbnail" alt=""/>
+          </td>
+          <td class="product-name">
+            <a href="#" (click)="$event.preventDefault()">{{ product.displayName }}</a>
+          </td>
+          <td class="product-price">
+            {{ (product.price | number : '1.2-2') + product.priceCurrency }}
+          </td>
+          <td class="product-quantity">
+            <input type="number" class="input-text" step="1" min="0" max="" [value]="product.amount"
+                   (input)="onProductAmountUpdate($event, product)" inputmode="numeric"/>
+          </td>
+          <td class="product-subtotal">
+            {{ ((product.amount * product.price) | number : '1.2-2') + product.priceCurrency }}
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <!-- /Products -->
+
+      <!-- Cart summary -->
+      <table class="shop_table col-12 text-center">
+        <tbody>
+        <tr class="cart-title">
+          <th colspan="2">Podsumowanie</th>
+        </tr>
+        <tr class="cart-discounts">
+          <th>Zniżki</th>
+          <td>brak</td>
+        </tr>
+        <tr class="order-total">
+          <th>Suma</th>
+          <td>
+            {{ ((cartData$ | async).sum | number : '1.2-2') + (cartData$ | async).sumCurrency }}
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <!-- /Cart summary -->
+
+      <!-- Checkout -->
+      <div class="col-12">
+        <a [href]="'/cart/checkout'" class="checkout-button">
+          Przejdź do wysyłki
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
