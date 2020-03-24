@@ -1,5 +1,5 @@
 <!-- Empty cart -->
-<p *ngIf="cartData.products.length === 0; else cartTemplate" class="empty-cart">
+<p *ngIf="(cartData$ | async).products.length === 0; else cartTemplate" class="empty-cart">
   Koszyk jest pusty
 </p>
 
@@ -8,7 +8,7 @@
 
   <!-- Cart list -->
   <ul class="cart_list">
-    <li *ngFor="let product of cartData.products" class="cart-item-list">
+    <li *ngFor="let product of (cartData$ | async).products" class="cart-item-list">
       <a (click)="$event.preventDefault()" class="cart-thumb" href="#">
         <img [src]="product.imageSrc" alt="">
       </a>
@@ -31,8 +31,8 @@
   <span class="subtotal">
       <strong>Suma:</strong>
       <span class="amount">
-        {{ cartData.sum | number : '1.2-2' }}
-        {{ cartData.sumCurrency }}
+        {{ (cartData$ | async).sum | number : '1.2-2' }}
+        {{ (cartData$ | async).sumCurrency }}
       </span>
   </span>
 
