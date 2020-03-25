@@ -1,4 +1,23 @@
-<section>
+<!-- Empty cart -->
+<section *ngIf="(cartData$ | async).products.length === 0">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-12 cart-empty">
+        <p>Twój koszyk jest pusty</p>
+      </div>
+      <div class="col-12">
+        <a [href]="'/'" class="button">
+          Powrót do sklepu
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Cart view -->
+<section *ngIf="(cartData$ | async).products.length > 0">
   <div class="container">
     <div class="row">
 
@@ -62,7 +81,7 @@
 
       <!-- Checkout -->
       <div class="col-12">
-        <a [href]="'/cart/checkout'" class="checkout-button">
+        <a [href]="'/cart/checkout'" class="button">
           Przejdź do wysyłki
         </a>
       </div>
@@ -70,3 +89,4 @@
     </div>
   </div>
 </section>
+<!-- /Cart view -->

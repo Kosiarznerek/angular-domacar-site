@@ -10,6 +10,29 @@ section {
   text-align: left;
   line-height: 24px;
 
+  div.cart-empty {
+
+    margin-bottom: 25px;
+
+    p {
+      font-weight: 700;
+      color: #333;
+      text-align: center;
+      padding: 0;
+      margin: 0 0 40px !important;
+      position: relative;
+      background-color: #f2f2f2;
+      border-top: none;
+      list-style: none !important;
+      width: auto;
+      word-wrap: break-word;
+      line-height: 50px;
+      font-size: 14px;
+      border-radius: 0;
+    }
+
+  }
+
   table.shop_table {
 
     background: #fff;
@@ -95,7 +118,6 @@ section {
         border-radius: 0;
         outline: none;
         display: inline-block;
-        padding: 0 12px 0 30px;
         font-size: 13px;
         text-align: center;
         font-weight: 900;
@@ -107,7 +129,7 @@ section {
 
   }
 
-  a.checkout-button {
+  a.button {
 
     background-color: #3c5c9e;
     color: #fff;
