@@ -1,6 +1,5 @@
-[ ] Skaczące szerokości kolumn przy koszyku
 [x] Obsługa pustego koszyka
-[ ] RWD podglądu koszyka
+[x] RWD podglądu koszyka
 
 [ ] Rozplanować routing
 [ ] Asynchroniczne ładowanie produktów

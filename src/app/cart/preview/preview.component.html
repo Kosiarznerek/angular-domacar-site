@@ -26,11 +26,11 @@
         <thead>
         <tr>
           <th class="product-remove">&nbsp;</th>
-          <th class="product-thumbnail">&nbsp;</th>
+          <th class="product-thumbnail d-none d-md-table-cell">&nbsp;</th>
           <th class="product-name">Produkt</th>
-          <th class="product-price">Cena</th>
+          <th class="product-price d-none d-md-table-cell">Cena</th>
           <th class="product-quantity">Ilość</th>
-          <th class="product-subtotal">Suma</th>
+          <th class="product-subtotal d-none d-md-table-cell">Suma</th>
         </tr>
         </thead>
         <tbody>
@@ -38,20 +38,20 @@
           <td class="product-remove">
             <a href="#" class="remove" (click)="onProductRemoveClick($event, product)">×</a>
           </td>
-          <td class="product-thumbnail">
+          <td class="product-thumbnail d-none d-md-table-cell">
             <img [src]="product.imageSrc" class="thumbnail" alt=""/>
           </td>
           <td class="product-name">
             <a href="#" (click)="$event.preventDefault()">{{ product.displayName }}</a>
           </td>
-          <td class="product-price">
+          <td class="product-price d-none d-md-table-cell">
             {{ (product.price | number : '1.2-2') + product.priceCurrency }}
           </td>
           <td class="product-quantity">
             <input type="number" class="input-text" step="1" min="0" max="" [value]="product.amount"
                    (input)="onProductAmountUpdate($event, product)" inputmode="numeric"/>
           </td>
-          <td class="product-subtotal">
+          <td class="product-subtotal d-none d-md-table-cell">
             {{ ((product.amount * product.price) | number : '1.2-2') + product.priceCurrency }}
           </td>
         </tr>
