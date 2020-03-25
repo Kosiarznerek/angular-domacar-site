@@ -1,9 +1,149 @@
-p {
-  height: 1250px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-  background-color: #f7f7f7;
+section {
+
+  background-color: #ffffff;
+  padding: 80px 0;
+  position: relative;
+  font-family: museo-sans;
+  color: #9e9e9e;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: left;
+  line-height: 24px;
+
+  h2 {
+    font-size: 24px;
+    line-height: 1;
+    text-align: left;
+    letter-spacing: -.7px;
+    color: #2f2f2f;
+    font-weight: 700;
+    font-family: Montserrat, serif;
+    text-transform: uppercase;
+    margin: 0 auto 20px;
+  }
+
+  p {
+    font-size: 16px;
+    text-align: left;
+    margin: 0 0 30px 0;
+    font-weight: 100;
+  }
+
+  .services-list {
+
+    > div {
+      display: flex;
+      margin-bottom: 30px;
+    }
+
+    i {
+      font-size: 50px;
+      color: #3c5c9e;
+      display: flex;
+      margin-right: 30px;
+    }
+
+    h4 {
+
+      color: #2f2f2f;
+      text-transform: none;
+      font-size: 16px;
+      margin-top: 0;
+      font-weight: 700;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @media (max-width: 576px) {
+        flex: 1;
+      }
+
+    }
+
+  }
+
+  input {
+
+    background: 0 0;
+    box-shadow: none;
+    border: 2px solid rgba(0, 0, 0, .1);
+    height: 50px;
+    display: inline-block;
+    line-height: 46px;
+    color: #333;
+    outline: none;
+    font-weight: 700;
+    transition: .3s;
+    padding: 0 20px;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 0 8px;
+    font-size: 13px;
+
+    &::placeholder {
+      color: #333;
+    }
+
+  }
+
+  textarea {
+
+    background: 0 0;
+    box-shadow: none;
+    border: 2px solid rgba(0, 0, 0, .1);
+    box-sizing: border-box;
+    width: 100%;
+    height: 10em;
+    line-height: 1.5;
+    padding: 20px;
+    display: block;
+    color: #333;
+    outline: none;
+    font-weight: 700;
+    transition: .3s;
+    resize: none;
+    margin: 0 0 8px;
+    font-size: 13px;
+
+    &::placeholder {
+      color: #333;
+    }
+
+  }
+
+  button.button {
+
+    background-color: #3c5c9e;
+    color: #fff;
+    border: 2px solid #3c5c9e;
+    transition: 0.3s !important;
+    text-align: center;
+    min-width: 170px;
+    font-size: 14px;
+    font-weight: 900;
+    padding: 17px 25px;
+    margin: auto;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    line-height: 1;
+    cursor: pointer;
+    outline: 0;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+
+    &:hover {
+      color: #3c5c9e;
+      background: transparent;
+    }
+
+  }
+
+  @media (max-width: 995px) {
+    .contact-us {
+      margin-top: 30px;
+    }
+  }
+
 }
