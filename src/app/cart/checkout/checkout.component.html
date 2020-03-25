@@ -1,1 +1,126 @@
-<p>Tutaj będziemy uzupełniać dane do wysyłki produktów</p>
+<section>
+  <div class="container">
+    <form class="row" [formGroup]="form">
+
+      <!-- Title -->
+      <div class="col-12">
+        <h3>Dane do wysyłki</h3>
+      </div>
+
+      <!-- Name -->
+      <div class="col-md-6">
+        <label class="input-label">
+          Imię&nbsp;<abbr class="required">*</abbr>
+        </label>
+        <input type="text" formControlName="name" class="input-text" placeholder="" value=""/>
+      </div>
+
+      <!-- Surname -->
+      <div class="col-md-6">
+        <label class="input-label">
+          Nazwisko&nbsp;<abbr class="required">*</abbr>
+        </label>
+        <input type="text" formControlName="surname" class="input-text" placeholder="" value=""/>
+      </div>
+
+      <!-- Email -->
+      <div class="col-md-6">
+        <label class="input-label">
+          Adres email&nbsp;<abbr class="required">*</abbr>
+        </label>
+        <input type="text" formControlName="email" class="input-text" placeholder="" value=""/>
+      </div>
+
+      <!-- Phone -->
+      <div class="col-md-6">
+        <label class="input-label">
+          Telefon kontaktowy&nbsp;<abbr class="required">*</abbr>
+        </label>
+        <input type="text" formControlName="phone" class="input-text" placeholder="" value=""/>
+      </div>
+
+      <!-- Country -->
+      <div class="col-md-6">
+        <label class="input-label">
+          Kraj&nbsp;<abbr class="required">*</abbr>
+        </label>
+        <input type="text" formControlName="country" class="input-text" placeholder="" value=""/>
+      </div>
+
+      <!-- City -->
+      <div class="col-md-6">
+        <label class="input-label">
+          Miasto&nbsp;<abbr class="required">*</abbr>
+        </label>
+        <input type="text" formControlName="city" class="input-text" placeholder="" value=""/>
+      </div>
+
+      <!-- Street -->
+      <div class="col-md-6">
+        <label class="input-label">
+          Ulica, numer bloku i mieszkania&nbsp;<abbr class="required">*</abbr>
+        </label>
+        <input type="text" formControlName="street" class="input-text" placeholder="" value=""/>
+      </div>
+
+      <!-- Postcode -->
+      <div class="col-md-6">
+        <label class="input-label">
+          Kod pocztowy&nbsp;<abbr class="required">*</abbr>
+        </label>
+        <input type="text" formControlName="postcode" class="input-text" placeholder="" value=""/>
+      </div>
+
+      <!-- Additional info -->
+      <div class="col-12">
+        <label class="textarea-label">
+          Uwagi do zamówienia
+        </label>
+        <textarea formControlName="additionalInfo" class="textarea-text"></textarea>
+      </div>
+
+      <!-- Summary details -->
+      <div class="col-12">
+        <h3>Twoje zamówienie</h3>
+        <table class="shop_table">
+          <thead>
+          <tr>
+            <th class="product-name">Produkt</th>
+            <th class="product-total">Cena</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr class="cart_item" *ngFor="let product of (cartData$ | async).products">
+            <td class="product-name">
+              {{ product.displayName }} x {{ product.amount }}
+            </td>
+            <td class="product-total">
+              {{ ((product.amount * product.price) | number : '1.2-2') + product.priceCurrency }}
+            </td>
+          </tr>
+          </tbody>
+          <tfoot>
+          <tr class="cart-subtotal">
+            <th>Cena produktów</th>
+            <th>
+              {{ ((cartData$ | async).sum | number : '1.2-2') + (cartData$ | async).sumCurrency }}
+            </th>
+          </tr>
+          <tr class="order-total">
+            <th>Suma zamówienia</th>
+            <th>
+              {{ ((cartData$ | async).sum | number : '1.2-2') + (cartData$ | async).sumCurrency }}
+            </th>
+          </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <!-- Submit -->
+      <div class="col-12">
+        <button type="submit" class="button">Złóż zamówienie</button>
+      </div>
+
+    </form>
+  </div>
+</section>
