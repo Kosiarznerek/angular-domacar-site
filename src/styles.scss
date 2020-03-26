@@ -15,6 +15,10 @@ $hamburger-layer-height: 3px !default;
 $hamburger-layer-spacing: 3px !default;
 @import "~hamburgers/_sass/hamburgers/hamburgers";
 
+/* Carousel */
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
 html, body {
   font-family: museo-sans;
 }

@@ -7,6 +7,7 @@ import {StatisticsComponent} from './statistics/statistics.component';
 import {ExperienceComponent} from './experience/experience.component';
 import {PartnersComponent} from './partners/partners.component';
 import {ServicesComponent} from './services/services.component';
+import {CarouselModule} from 'ngx-owl-carousel-o';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import {ServicesComponent} from './services/services.component';
   ],
   imports: [
     CommonModule,
+    CarouselModule,
     RouterModule.forChild([
       {path: '', component: AboutComponent}
     ])
