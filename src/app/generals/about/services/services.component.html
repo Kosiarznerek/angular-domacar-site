@@ -1,9 +1,17 @@
 <section>
   <div class="container">
     <div class="row">
-      <div class="col-12">
-        <p>Tutaj będzie o naszych usługach</p>
+
+      <div class="col-md-6 col-lg-4" *ngFor="let serviceDetails of servicesDetails">
+        <div class="service-icon">
+          <i [ngClass]="serviceDetails.iconName"></i>
+        </div>
+        <div class="service-content">
+          <h4>{{ serviceDetails.title }}</h4>
+          <p>{{ serviceDetails.description }}</p>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
