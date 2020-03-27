@@ -20,6 +20,10 @@ const routes: Routes = [
     loadChildren: () => import('./generals/generals.module').then(r => r.GeneralsModule)
   },
   {
+    path: 'shop',
+    loadChildren: () => import('./shop/shop.module').then(r => r.ShopModule)
+  },
+  {
     path: '**',
     pathMatch: 'full',
     loadChildren: () => import('./unknown-route/unknown-route.module').then(r => r.UnknownRouteModule)
