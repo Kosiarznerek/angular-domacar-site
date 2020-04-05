@@ -1,0 +1,18 @@
+<!-- Title -->
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <p class="breadcrumbs">
+          Sklep
+          <ng-container *ngFor="let breadcrumb of breadcrumbs$ | async">
+            <span class="fa fa-angle-right"></span>{{ breadcrumb }}
+          </ng-container>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Router outlet -->
+<router-outlet></router-outlet>
