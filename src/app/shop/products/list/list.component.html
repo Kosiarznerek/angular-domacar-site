@@ -1,0 +1,29 @@
+<!-- Title -->
+<div class="row">
+  <div class="col-12">
+    <h1>Nasze produkty</h1>
+  </div>
+</div>
+
+<!-- Products -->
+<div class="row">
+  <div *ngFor="let product of productsList" class="col-sm-6 col-lg-3">
+    <div class="product-wrapper" [routerLink]="'/shop/' + product.category + '/product-preview/' + product.id">
+
+      <!-- Image -->
+      <img [src]="product.imgSrc" alt="..."/>
+
+      <!-- Description -->
+      <div class="product-description">
+        <h2 class="product-name">{{ product.displayName }}</h2>
+        <p class="product-rating">
+          <app-rating-stars [currentValue]="product.rating" [maxValue]="5" [minValue]="0"></app-rating-stars>
+        </p>
+        <p class="product-price">
+          {{ product.price | number : '1.2-2' }} {{ product.priceCurrency }}
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>

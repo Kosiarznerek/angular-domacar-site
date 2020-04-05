@@ -1,0 +1,50 @@
+h1 {
+  max-width: 100%;
+  text-align: left;
+  margin-bottom: 30px;
+  color: #2f2f2f;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 34px;
+  text-transform: uppercase;
+}
+
+input[type="search"] {
+
+  width: 100%;
+  padding: 0 20px;
+  border: none;
+  outline: none;
+  font-size: inherit;
+  line-height: 50px;
+  height: 50px;
+  margin-top: 0;
+  border-radius: 0;
+  background: rgba(0, 0, 0, .05);
+
+  &::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+  }
+
+}
+
+button[type="button"] {
+
+  width: 100%;
+  padding: 0 20px;
+  border: none;
+  outline: none;
+  font-size: inherit;
+  line-height: 50px;
+  height: 50px;
+  margin-top: 30px;
+  border-radius: 0;
+  background: rgba(0, 0, 0, .05);
+  color: #2f2f2f;
+  font-weight: 700;
+
+  &:hover {
+    color: #3c5c9e;
+  }
+
+}

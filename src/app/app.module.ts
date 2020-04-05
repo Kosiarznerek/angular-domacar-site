@@ -14,7 +14,7 @@ import {CartComponent} from './app-main/navbar-top/cart/cart.component';
     AppComponent,
     NavbarTopComponent,
     FooterComponent,
-    CartComponent
+    CartComponent,
   ],
   imports: [
     BrowserModule,

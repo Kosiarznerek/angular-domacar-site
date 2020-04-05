@@ -11,6 +11,7 @@ import {RouterModule} from '@angular/router';
 import {ServicesIconsComponent} from './services-icons/services-icons.component';
 import {RatingStarsComponent} from './latest-products/rating-stars/rating-stars.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import {ShopCategoryToStringModule} from '../shop-category-to-string.module';
 
 @NgModule({
   declarations: [
@@ -26,11 +27,12 @@ import {ReactiveFormsModule} from '@angular/forms';
   ],
   imports: [
     CommonModule,
+    ShopCategoryToStringModule,
     RouterModule.forChild([
       {path: '', component: HomeComponent}
     ]),
     ReactiveFormsModule
-  ],
+  ]
 })
 export class HomeModule {
 }

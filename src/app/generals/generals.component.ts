@@ -38,7 +38,7 @@ export class GeneralsComponent implements OnInit {
 
     // Getting breadcrumb data
     this.breadcrumb$ = subRoutePath$.pipe(
-      map(path => this._getBreadcrumbData(path)),
+      map(path => GeneralsComponent._GetBreadcrumbData(path)),
       shareReplay()
     );
 
@@ -55,7 +55,7 @@ export class GeneralsComponent implements OnInit {
   onWindowScroll(event?: Event): void {
 
     const nativeElement: HTMLElement = this.parallaxOverlay.nativeElement;
-    const translate: number = this._rescale(window.scrollY, 0, nativeElement.clientHeight, -35, 30);
+    const translate: number = GeneralsComponent._Rescale(window.scrollY, 0, nativeElement.clientHeight, -35, 30);
     nativeElement.style.transform = `translate3d(0px, ${translate}px, 0px)`;
 
   }
@@ -68,7 +68,7 @@ export class GeneralsComponent implements OnInit {
    * @param outMin Output scale min
    * @param outMax Output scale max
    */
-  private _rescale(num: number, inMin: number, inMax: number, outMin: number, outMax: number): number {
+  private static _Rescale(num: number, inMin: number, inMax: number, outMin: number, outMax: number): number {
 
     return (num - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
 
@@ -78,7 +78,7 @@ export class GeneralsComponent implements OnInit {
    * Gets breadcrumbs data
    * @param subRouteName Route name for breadcrumb
    */
-  private _getBreadcrumbData(subRouteName: string): IBreadcrumb {
+  private static _GetBreadcrumbData(subRouteName: string): IBreadcrumb {
 
     switch (subRouteName) {
       case 'about':

@@ -1,8 +1,8 @@
 import {Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
 import {merge, Observable, of} from 'rxjs';
-import {IRouterData} from '../generals/generals.module.models';
 import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
-import {filter, map, mergeMap} from 'rxjs/operators';
+import {bufferCount, filter, map, shareReplay, switchMap} from 'rxjs/operators';
+import {IBreadcrumb} from './cart.component.models';
 
 @Component({
   templateUrl: './cart.component.html',
@@ -12,7 +12,7 @@ export class CartComponent implements OnInit {
 
   // Component data
   @ViewChild('parallaxOverlay', {static: true}) parallaxOverlay: ElementRef;
-  public routerData$: Observable<IRouterData>;
+  public breadcrumb$: Observable<IBreadcrumb>;
 
   constructor(
     private readonly _router: Router,
@@ -22,22 +22,24 @@ export class CartComponent implements OnInit {
 
   ngOnInit() {
 
-    // Get router data
-    this.routerData$ = merge(
+    // Get sub route path
+    const subRoutePath$: Observable<string> = merge(
       of(1),
       this._router.events.pipe(
         filter(v => v instanceof NavigationEnd)
       )
     ).pipe(
-      map(() => this._activatedRoute), // Listen to activateRoute
-      map(route => {
-        while (route.firstChild) {
-          route = route.firstChild;
-        }
-        return route;
-      }),
-      filter(route => route.outlet === 'primary'),
-      mergeMap(route => route.data as Observable<IRouterData>),  // get the data
+      switchMap(() => this._activatedRoute.pathFromRoot),
+      switchMap(v => v.url),
+      bufferCount(this._activatedRoute.pathFromRoot.length),
+      map(v => v.map(u => u.join('/')).join('/')),
+      map(pathFromRoot => this._router.url.split(pathFromRoot)[1])
+    );
+
+    // Getting breadcrumb data
+    this.breadcrumb$ = subRoutePath$.pipe(
+      map(path => CartComponent._GetBreadcrumbData(path)),
+      shareReplay()
     );
 
     // Trigger on scroll
@@ -53,7 +55,7 @@ export class CartComponent implements OnInit {
   onWindowScroll(event?: Event): void {
 
     const nativeElement: HTMLElement = this.parallaxOverlay.nativeElement;
-    const translate: number = this._rescale(window.scrollY, 0, nativeElement.clientHeight, -35, 30);
+    const translate: number = CartComponent._Rescale(window.scrollY, 0, nativeElement.clientHeight, -35, 30);
     nativeElement.style.transform = `translate3d(0px, ${translate}px, 0px)`;
 
   }
@@ -66,9 +68,30 @@ export class CartComponent implements OnInit {
    * @param outMin Output scale min
    * @param outMax Output scale max
    */
-  private _rescale(num: number, inMin: number, inMax: number, outMin: number, outMax: number): number {
+  private static _Rescale(num: number, inMin: number, inMax: number, outMin: number, outMax: number): number {
 
     return (num - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
+
+  }
+
+  /**
+   * Gets breadcrumbs data
+   * @param subRouteName Route name for breadcrumb
+   */
+  private static _GetBreadcrumbData(subRouteName: string): IBreadcrumb {
+
+    switch (subRouteName) {
+      case 'preview':
+        return {
+          displayName: 'Podgląd',
+          parallaxSource: '/assets/images/parallax/parallax1.jpg'
+        };
+      case 'checkout':
+        return {
+          displayName: 'Formularz wysyłkowy',
+          parallaxSource: '/assets/images/parallax/parallax2.jpg'
+        };
+    }
 
   }
 

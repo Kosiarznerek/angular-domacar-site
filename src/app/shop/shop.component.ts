@@ -3,6 +3,7 @@ import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 import {bufferCount, filter, map, shareReplay, switchMap} from 'rxjs/operators';
 import {merge, Observable, of} from 'rxjs';
 import {EShopCategory} from '../cart-store.service.models';
+import {ShopCategoryToStringPipe} from '../shop-category-to-string.pipe';
 
 @Component({
   templateUrl: './shop.component.html',
@@ -37,7 +38,7 @@ export class ShopComponent implements OnInit {
 
     // Getting breadcrumbs
     this.breadcrumbs$ = subRoutePath$.pipe(
-      map(path => this._getBreadcrumbsDisplayName(path)),
+      map(path => ShopComponent._GetBreadcrumbsDisplayName(path)),
       shareReplay()
     );
 
@@ -47,27 +48,13 @@ export class ShopComponent implements OnInit {
    * Creates breadcrumbs based on sub route path
    * @param subRoutePath Current sub route
    */
-  private _getBreadcrumbsDisplayName(subRoutePath: string): string[] {
+  private static _GetBreadcrumbsDisplayName(subRoutePath: string): string[] {
 
     // Extract shop category
     const shopCategory: EShopCategory = subRoutePath.split('/')[0] as EShopCategory;
 
     // Getting shop category display name
-    let shopCategoryDisplayName: string;
-    switch (shopCategory) {
-      case EShopCategory.CarParts:
-        shopCategoryDisplayName = 'Części samochodowe';
-        break;
-      case EShopCategory.Wheels:
-        shopCategoryDisplayName = 'Felgi';
-        break;
-      case EShopCategory.Tires:
-        shopCategoryDisplayName = 'Opony';
-        break;
-      case EShopCategory.Accessories:
-        shopCategoryDisplayName = 'Akcesoria';
-        break;
-    }
+    const shopCategoryDisplayName: string = ShopCategoryToStringPipe.Transform(shopCategory);
 
     // Extract sub route
     const subRoute: string = subRoutePath.split(`${shopCategory}/`)[1].split('/')[0];
