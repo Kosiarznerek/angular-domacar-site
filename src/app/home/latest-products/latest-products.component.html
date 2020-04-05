@@ -12,7 +12,7 @@
     <!-- Products -->
     <div class="row">
       <div *ngFor="let product of latestProducts" class="col-sm-6 col-lg-3">
-        <div class="product-wrapper">
+        <div class="product-wrapper" [routerLink]="'/shop/' + product.category + '/product-preview/' + product.id">
 
           <!-- Image -->
           <img [src]="product.imgSrc" alt="..."/>

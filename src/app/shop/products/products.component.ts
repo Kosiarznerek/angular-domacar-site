@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {map, take} from 'rxjs/operators';
-import {ShopCategory} from '../shop.module.models';
+import {EShopCategory} from '../../cart-store.service.models';
 
 @Component({
   selector: 'app-products',
@@ -18,8 +18,8 @@ export class ProductsComponent implements OnInit {
   public async ngOnInit(): Promise<void> {
 
     // Extract shop category
-    const shopCategory: ShopCategory = await this._activatedRoute.parent.parent.url.pipe(
-      map(v => v[0].path as ShopCategory),
+    const shopCategory: EShopCategory = await this._activatedRoute.parent.parent.url.pipe(
+      map(v => v[0].path as EShopCategory),
       take(1)
     ).toPromise();
 

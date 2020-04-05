@@ -42,7 +42,9 @@
             <img [src]="product.imageSrc" class="thumbnail" alt=""/>
           </td>
           <td class="product-name">
-            <a href="#" (click)="$event.preventDefault()">{{ product.displayName }}</a>
+            <a [href]="'/shop/' + product.category + '/product-preview/' + product.id">
+              {{ product.displayName }}
+            </a>
           </td>
           <td class="product-price d-none d-md-table-cell">
             {{ (product.price | number : '1.2-2') + product.priceCurrency }}

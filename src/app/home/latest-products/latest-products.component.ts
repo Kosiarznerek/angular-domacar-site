@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {IProduct} from './latest-products.component.models';
+import {EShopCategory} from '../../cart-store.service.models';
 
 @Component({
   selector: 'app-latest-products',
@@ -15,6 +16,13 @@ export class LatestProductsComponent implements OnInit {
 
     // Initialize latest products
     this.latestProducts = new Array(8).fill(0).map((v, i) => ({
+      id: i + 1,
+      category: [
+        EShopCategory.Accessories,
+        EShopCategory.CarParts,
+        EShopCategory.Tires,
+        EShopCategory.Wheels,
+      ][Math.floor(Math.random() * 4)],
       displayName: [
         'Przykładowy produkt ze sklepu',
         'Przykładowy produkt ze sklepu o bardzo długiej nazwie',
@@ -22,12 +30,6 @@ export class LatestProductsComponent implements OnInit {
       rating: Math.floor(Math.random() * 2) + 3,
       price: Math.floor(Math.random() * 100) + 100,
       priceCurrency: 'zł',
-      category: [
-        'Części samochdowe',
-        'Akcesoria',
-        'Felgi',
-        'Opony'
-      ][Math.floor(Math.random() * 4)],
       imgSrc: `../../../assets/images/products/product${i + 1}.png`
     }));
 

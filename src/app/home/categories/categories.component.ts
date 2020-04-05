@@ -1,4 +1,5 @@
 import {Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
+import {EShopCategory} from '../../cart-store.service.models';
 
 @Component({
   selector: 'app-categories',
@@ -6,6 +7,9 @@ import {Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/c
   styleUrls: ['./categories.component.scss']
 })
 export class CategoriesComponent implements OnInit {
+
+  // Simple getter
+  public EShopCategory = EShopCategory;
 
   // Component data
   @ViewChild('backgroundContainer', {static: true}) backgroundContainer: ElementRef;

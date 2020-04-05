@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
-import {ShopCategory} from './shop.module.models';
+import {EShopCategory} from '../cart-store.service.models';
 
 const shopCategoryRoutes: Routes = [
   {
@@ -25,19 +25,19 @@ const shopCategoryRoutes: Routes = [
     CommonModule,
     RouterModule.forChild([
       {
-        path: ShopCategory.CarParts,
+        path: EShopCategory.CarParts,
         children: shopCategoryRoutes,
       },
       {
-        path: ShopCategory.Wheels,
+        path: EShopCategory.Wheels,
         children: shopCategoryRoutes,
       },
       {
-        path: ShopCategory.Tires,
+        path: EShopCategory.Tires,
         children: shopCategoryRoutes,
       },
       {
-        path: ShopCategory.Accessories,
+        path: EShopCategory.Accessories,
         children: shopCategoryRoutes,
       },
     ])

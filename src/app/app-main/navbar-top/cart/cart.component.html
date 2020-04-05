@@ -13,7 +13,7 @@
         <img [src]="product.imageSrc" alt="">
       </a>
       <div class="cart-desc">
-        <a (click)="$event.preventDefault()" class="cart-item" href="#">
+        <a class="cart-item" [href]="'/shop/' + product.category + '/product-preview/' + product.id">
           {{ product.displayName }}
         </a>
         <span class="product-quantity">

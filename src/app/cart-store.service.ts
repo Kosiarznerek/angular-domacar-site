@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
-import {ICartData, ICartProduct} from './cart-store.service.models';
+import {EShopCategory, ICartData, ICartProduct} from './cart-store.service.models';
 import {map} from 'rxjs/operators';
 
 @Injectable({
@@ -19,6 +19,12 @@ export class CartStoreService {
       sumCurrency: 'zł',
       products: new Array(3).fill(0).map((v, i) => ({
         id: i + 1,
+        category: [
+          EShopCategory.Accessories,
+          EShopCategory.CarParts,
+          EShopCategory.Tires,
+          EShopCategory.Wheels,
+        ][Math.floor(Math.random() * 4)],
         displayName: `Przykładowy produkt testowy ${i + 1}`,
         imageSrc: `../../../assets/images/products/product${i % 8 + 1}.png`,
         price: Math.floor(Math.random() * 1000) + 100,
@@ -60,6 +66,7 @@ export class CartStoreService {
       sumCurrency: v.sumCurrency,
       products: v.products.map(p => ({
         id: p.id,
+        category: p.category,
         displayName: p.displayName,
         imageSrc: p.imageSrc,
         price: p.price,

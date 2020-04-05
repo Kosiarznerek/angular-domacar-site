@@ -4,6 +4,7 @@ import {animate, style, transition, trigger} from '@angular/animations';
 import {BreakpointObserver} from '@angular/cdk/layout';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
+import {EShopCategory} from '../../cart-store.service.models';
 
 const SLIDE_UP_DOWN_TIMING = 250;
 
@@ -49,19 +50,19 @@ export class NavbarTopComponent implements OnInit {
         children: [
           {
             displayName: 'Części samochodowe',
-            href: '#'
+            href: `/shop/${EShopCategory.CarParts}`
           },
           {
             displayName: 'Opony',
-            href: '#'
+            href: `/shop/${EShopCategory.Tires}`
           },
           {
             displayName: 'Felgi',
-            href: '#'
+            href: `/shop/${EShopCategory.Wheels}`
           },
           {
             displayName: 'Akcesoria',
-            href: '#'
+            href: `/shop/${EShopCategory.Accessories}`
           }
         ]
       },
