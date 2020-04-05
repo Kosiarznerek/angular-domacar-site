@@ -2,17 +2,17 @@
 <div class="single-page-heading">
 
   <!-- Background image -->
-  <div #parallaxOverlay [ngStyle]="{ 'background-image': 'url(' + (routerData$ | async).parallaxSource + ')'}"
+  <div #parallaxOverlay [ngStyle]="{ 'background-image': 'url(' + (breadcrumb$ | async).parallaxSource + ')'}"
        class="parallax-overlay">
   </div>
 
   <!-- Title -->
   <div class="container">
     <p class="breadcrumbs">
-      Główna<span class="fa fa-angle-right"></span>{{ (routerData$ | async).breadcrumb }}
+      Główna<span class="fa fa-angle-right"></span>{{ (breadcrumb$ | async).displayName }}
     </p>
-    <h1 class="section-heading" style=" color:#ffffff;">
-      {{ (routerData$ | async).breadcrumb }}
+    <h1 class="section-heading" style="color:#ffffff;">
+      {{ (breadcrumb$ | async).displayName }}
     </h1>
   </div>
 
