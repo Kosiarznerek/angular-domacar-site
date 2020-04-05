@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
-import {bufferCount, filter, map, switchMap} from 'rxjs/operators';
+import {bufferCount, filter, map, shareReplay, switchMap} from 'rxjs/operators';
 import {merge, Observable, of} from 'rxjs';
 import {EShopCategory} from '../cart-store.service.models';
 
@@ -37,7 +37,8 @@ export class ShopComponent implements OnInit {
 
     // Getting breadcrumbs
     this.breadcrumbs$ = subRoutePath$.pipe(
-      map(path => this._getBreadcrumbsDisplayName(path))
+      map(path => this._getBreadcrumbsDisplayName(path)),
+      shareReplay()
     );
 
   }
