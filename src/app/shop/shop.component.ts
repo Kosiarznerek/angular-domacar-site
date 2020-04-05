@@ -69,7 +69,7 @@ export class ShopComponent implements OnInit {
     }
 
     // Extract sub route
-    const subRoute: string = subRoutePath.split(`${shopCategory}/`)[1];
+    const subRoute: string = subRoutePath.split(`${shopCategory}/`)[1].split('/')[0];
 
     // Getting sub route display name
     let subRouteDisplayName: string;
