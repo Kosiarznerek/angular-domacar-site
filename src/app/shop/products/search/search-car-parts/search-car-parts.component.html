@@ -2,14 +2,20 @@
 <div class="row">
   <div class="col-12">
     <ul class="filter-tabs">
-      <li class="active">Dobór wg. pojazdu</li>
-      <li class="">Dobór wg. nazwy</li>
+      <li [class.active]="activeFilterType === EFilterType.ByVehicle"
+          (click)="activeFilterType = EFilterType.ByVehicle">
+        Dobór wg. pojazdu
+      </li>
+      <li [class.active]="activeFilterType === EFilterType.ByName"
+          (click)="activeFilterType = EFilterType.ByName">
+        Dobór wg. nazwy
+      </li>
     </ul>
   </div>
 </div>
 
-<!-- Filters -->
-<div class="row">
+<!-- Filter by vehicle -->
+<div class="row" *ngIf="activeFilterType === EFilterType.ByVehicle">
   <div class="col-md-4">
     <input type="search" class="search-field" placeholder="Marka"/>
   </div>
@@ -18,6 +24,13 @@
   </div>
   <div class="col-md-4">
     <input type="search" class="search-field" placeholder="Typ"/>
+  </div>
+</div>
+
+<!-- Filter by name -->
+<div class="row" *ngIf="activeFilterType === EFilterType.ByName">
+  <div class="col-md-12">
+    <input type="search" class="search-field" placeholder="Nazwa lub numer części"/>
   </div>
 </div>
 
