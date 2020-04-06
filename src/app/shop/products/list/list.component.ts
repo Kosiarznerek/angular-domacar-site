@@ -21,7 +21,7 @@ export class ListComponent implements OnInit {
   ) {
 
     // Initialize products list
-    this.productsList = new Array(8).fill(0).map((v, i) => ({
+    this.productsList = new Array(16).fill(0).map((v, i) => ({
       id: i + 1,
       category: [
         EShopCategory.Accessories,
@@ -36,7 +36,7 @@ export class ListComponent implements OnInit {
       rating: Math.floor(Math.random() * 2) + 3,
       price: Math.floor(Math.random() * 100) + 100,
       priceCurrency: 'zł',
-      imgSrc: `../../../assets/images/products/product${i + 1}.png`
+      imgSrc: `../../../assets/images/products/product${(i % 8) + 1}.png`
     }));
 
   }
