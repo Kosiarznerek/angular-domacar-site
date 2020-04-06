@@ -23,10 +23,7 @@ export class LatestProductsComponent implements OnInit {
         EShopCategory.Tires,
         EShopCategory.Wheels,
       ][Math.floor(Math.random() * 4)],
-      displayName: [
-        'Przykładowy produkt ze sklepu',
-        'Przykładowy produkt ze sklepu o bardzo długiej nazwie',
-      ][Math.floor(Math.random() * 2)],
+      displayName: 'Przykładowy produkt ze sklepu',
       rating: Math.floor(Math.random() * 2) + 3,
       price: Math.floor(Math.random() * 100) + 100,
       priceCurrency: 'zł',
