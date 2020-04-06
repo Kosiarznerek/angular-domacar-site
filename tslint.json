@@ -76,8 +76,7 @@
     "use-pipe-transform-interface": true,
     "variable-name": {
       "options": [
-        "allow-leading-underscore",
-        "allow-pascal-case"
+        "allow-leading-underscore"
       ]
     }
   },

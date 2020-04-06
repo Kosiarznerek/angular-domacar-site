@@ -14,6 +14,9 @@ export class SearchComponent implements OnInit {
   // Component data
   public shopCategory$: Observable<EShopCategory>;
 
+  // Simple getters
+  public EShopCategory = EShopCategory;
+
   constructor(
     private readonly _activatedRoute: ActivatedRoute,
   ) {
