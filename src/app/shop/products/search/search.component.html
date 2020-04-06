@@ -28,6 +28,33 @@
   </div>
 </div>
 
+<!-- Sorting -->
+<div class="row">
+  <div class="col-md-4">
+    <app-dropdown [values]="[
+      { displayName: 'Wszystkie kategorie', value: 1 },
+      { displayName: 'Ogrzewanie / wentylacja', value: 2 },
+      { displayName: 'Silnik', value: 3 },
+      { displayName: 'System zamykania', value: 4 }
+    ]"></app-dropdown>
+  </div>
+  <div class="col-md-4">
+    <app-dropdown [values]="[
+      { displayName: 'Sortuj ceny malejąco', value: 1 },
+      { displayName: 'Sortuj ceny rosnąco', value: 2 },
+      { displayName: 'Sortuj oceny rosnąco', value: 3 },
+      { displayName: 'Sortuj oceny malejąco', value: 4 }
+    ]"></app-dropdown>
+  </div>
+  <div class="col-md-4">
+    <app-dropdown [values]="[
+      { displayName: 'Pokaż 16 elementów na strone', value: 1 },
+      { displayName: 'Pokaż 24 elementów na strone', value: 2 },
+      { displayName: 'Pokaż 32 elementów na strone', value: 3 }
+    ]"></app-dropdown>
+  </div>
+</div>
+
 <!-- Search button -->
 <div class="row">
   <div class="col-12">

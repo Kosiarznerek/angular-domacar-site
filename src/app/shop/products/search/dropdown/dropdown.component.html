@@ -1,0 +1,35 @@
+<!-- Current value -->
+<div class="current-value" (click)="toggleDropdownVisibility()">
+
+  <!-- Current value -->
+  <span>
+
+    <!-- No current value so select first -->
+    <ng-container *ngIf="currentValue === undefined && values.length > 0">
+      {{ values[0].displayName }}
+    </ng-container>
+
+    <!-- Display current value -->
+    <ng-container *ngIf="currentValue !== undefined">
+      <ng-container *ngFor="let value of values">
+        <ng-container *ngIf="value.value === currentValue">
+          {{ value.displayName }}
+        </ng-container>
+      </ng-container>
+    </ng-container>
+
+  </span>
+
+  <!-- Down arrow -->
+  <i class="fas fa-arrow-down"></i>
+
+</div>
+
+<!-- All values -->
+<div class="all-values-wrapper" *ngIf="dropdownVisible">
+  <ul>
+    <li *ngFor="let value of values" (click)="onDropdownItemSelect(value)">
+      {{ value.displayName }}
+    </li>
+  </ul>
+</div>

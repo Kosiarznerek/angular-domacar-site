@@ -5,6 +5,7 @@ import {RouterModule} from '@angular/router';
 import {SearchComponent} from './search/search.component';
 import {ListComponent} from './list/list.component';
 import {RatingStarsComponent} from './list/rating-stars/rating-stars.component';
+import {DropdownComponent} from './search/dropdown/dropdown.component';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import {RatingStarsComponent} from './list/rating-stars/rating-stars.component';
     SearchComponent,
     ListComponent,
     RatingStarsComponent,
+    DropdownComponent,
   ],
   imports: [
     CommonModule,

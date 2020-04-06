@@ -1,0 +1,74 @@
+.current-value {
+
+  width: 100%;
+  padding: 0 20px;
+  border: none;
+  outline: none;
+  font-size: inherit;
+  line-height: 50px;
+  height: 50px;
+  margin-top: 0;
+  border-radius: 0;
+  background: rgba(0, 0, 0, 0.05);
+  color: #757575;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  span {
+    flex: 1;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-right: 20px;
+  }
+
+  i {
+    display: flex;
+  }
+
+}
+
+.all-values-wrapper {
+
+  position: relative;
+  z-index: 1;
+
+  ul {
+
+    position: absolute;
+    top: 2px;
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background: #f2f2f2;
+    opacity: 1;
+    max-height: 200px;
+    overflow: auto;
+
+    li {
+
+      width: 100%;
+      padding: 0 20px;
+      line-height: 50px;
+      height: 50px;
+      margin-top: 0;
+      border-radius: 0;
+      color: #757575;
+      cursor: pointer;
+      font-weight: 300;
+
+      &:not(:first-child) {
+        border-top: 2px solid white;
+      }
+
+      &:hover {
+        color: #3c5c9e;
+      }
+
+    }
+
+  }
+
+}
