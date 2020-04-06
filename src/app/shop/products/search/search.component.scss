@@ -9,11 +9,15 @@ h1 {
   text-transform: uppercase;
 }
 
+.row:not(:last-child) {
+  margin-bottom: 30px;
+}
+
 .filter-tabs {
 
   list-style: none;
   padding: 0;
-  margin: 0 0 25px;
+  margin: 0;
   overflow: hidden;
   position: relative;
   border: none;
@@ -87,7 +91,6 @@ button[type="button"] {
   font-size: inherit;
   line-height: 50px;
   height: 50px;
-  margin-top: 30px;
   border-radius: 0;
   background: rgba(0, 0, 0, .05);
   color: #2f2f2f;
