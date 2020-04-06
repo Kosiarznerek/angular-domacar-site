@@ -43,6 +43,7 @@ h1 {
       cursor: pointer;
       font-weight: 700;
       flex: 1 1 100%;
+      transition: background ease-in-out 250ms;
 
       @media (min-width: 576px) {
         flex: 1 1 50%;
