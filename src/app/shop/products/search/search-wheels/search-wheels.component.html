@@ -1,1 +1,80 @@
-<p>search-wheels works!</p>
+<!-- Filters category -->
+<div class="row">
+  <div class="col-12">
+    <ul class="filter-tabs">
+      <li [class.active]="activeFilterType === EFilterType.ByVehicle"
+          (click)="activeFilterType = EFilterType.ByVehicle">
+        Dobór wg. pojazdu
+      </li>
+      <li [class.active]="activeFilterType === EFilterType.ByTire"
+          (click)="activeFilterType = EFilterType.ByTire">
+        Dobór wg. opony
+      </li>
+      <li [class.active]="activeFilterType === EFilterType.ByParameters"
+          (click)="activeFilterType = EFilterType.ByParameters">
+        Dobór wg. parametrów
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- Filter by vehicle -->
+<div class="row" *ngIf="activeFilterType === EFilterType.ByVehicle">
+  <div class="col-md-4">
+    <input type="search" class="search-field" placeholder="Marka"/>
+  </div>
+  <div class="col-md-4">
+    <input type="search" class="search-field" placeholder="Model"/>
+  </div>
+  <div class="col-md-4">
+    <input type="search" class="search-field" placeholder="Typ"/>
+  </div>
+</div>
+
+<!-- Filter by tire -->
+<div class="row" *ngIf="activeFilterType === EFilterType.ByTire">
+  <div class="col-md-4">
+    <input type="search" class="search-field" placeholder="Szerokość"/>
+  </div>
+  <div class="col-md-4">
+    <input type="search" class="search-field" placeholder="Profil"/>
+  </div>
+  <div class="col-md-4">
+    <input type="search" class="search-field" placeholder="Średnica"/>
+  </div>
+</div>
+
+<!-- Filter by parameters -->
+<div class="row" *ngIf="activeFilterType === EFilterType.ByParameters">
+  <div class="col-md-6 col-lg-3">
+    <input type="search" class="search-field" placeholder="Rozmiar"/>
+  </div>
+  <div class="col-md-6 col-lg-3">
+    <input type="search" class="search-field" placeholder="Roztaw śrub"/>
+  </div>
+  <div class="col-md-6 col-lg-3">
+    <input type="search" class="search-field" placeholder="Odsadzenie ET"/>
+  </div>
+  <div class="col-md-6 col-lg-3">
+    <input type="search" class="search-field" placeholder="Otwór centralny"/>
+  </div>
+</div>
+
+<!-- Sorting -->
+<div class="row">
+  <div class="col-md-6">
+    <app-dropdown [values]="[
+      { displayName: 'Sortuj ceny malejąco', value: 1 },
+      { displayName: 'Sortuj ceny rosnąco', value: 2 },
+      { displayName: 'Sortuj oceny rosnąco', value: 3 },
+      { displayName: 'Sortuj oceny malejąco', value: 4 }
+    ]"></app-dropdown>
+  </div>
+  <div class="col-md-6">
+    <app-dropdown [values]="[
+      { displayName: 'Pokaż 16 elementów na strone', value: 1 },
+      { displayName: 'Pokaż 24 elementów na strone', value: 2 },
+      { displayName: 'Pokaż 32 elementów na strone', value: 3 }
+    ]"></app-dropdown>
+  </div>
+</div>
