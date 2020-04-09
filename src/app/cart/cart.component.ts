@@ -20,7 +20,7 @@ export class CartComponent implements OnInit {
   ) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
 
     // Get sub route path
     const subRoutePath$: Observable<string> = merge(

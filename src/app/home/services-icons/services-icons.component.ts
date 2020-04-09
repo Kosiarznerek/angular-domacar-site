@@ -10,7 +10,7 @@ export class ServicesIconsComponent implements OnInit {
   constructor() {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }

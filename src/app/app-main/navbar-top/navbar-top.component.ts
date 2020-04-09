@@ -86,7 +86,7 @@ export class NavbarTopComponent implements OnInit {
 
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
   /**

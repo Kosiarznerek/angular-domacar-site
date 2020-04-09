@@ -9,7 +9,7 @@ export class UnknownRouteComponent implements OnInit {
   constructor() {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }

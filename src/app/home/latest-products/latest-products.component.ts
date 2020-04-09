@@ -32,7 +32,7 @@ export class LatestProductsComponent implements OnInit {
 
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }

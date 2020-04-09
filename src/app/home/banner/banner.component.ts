@@ -21,7 +21,7 @@ export class BannerComponent implements OnInit, OnDestroy {
 
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
 
     // Trigger on scroll
     this.onWindowScroll();

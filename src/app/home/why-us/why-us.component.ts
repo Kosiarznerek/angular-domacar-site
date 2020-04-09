@@ -10,7 +10,7 @@ export class WhyUsComponent implements OnInit {
   constructor() {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }

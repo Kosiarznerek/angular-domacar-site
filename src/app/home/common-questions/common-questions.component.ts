@@ -10,7 +10,7 @@ export class CommonQuestionsComponent implements OnInit {
   constructor() {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }
