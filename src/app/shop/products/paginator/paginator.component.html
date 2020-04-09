@@ -1,0 +1,33 @@
+<!-- Desktop view -->
+<div class="row">
+  <div class="col-12">
+    <div class="d-flex">
+
+      <!-- Go to first page -->
+      <button class="clickable" (click)="onPageChange(1)">
+        <i class="fas fa-angle-double-left"></i>
+      </button>
+
+      <!-- Desktop -->
+      <div class="pages-wrapper d-none d-sm-block">
+        <button class="clickable" [class.active]="i === paginatorState.currentPage" *ngFor="let i of pagesList"
+                (click)="onPageChange(i)">
+          {{ i }}
+        </button>
+        <button>z {{ paginatorState.totalPages }} stron</button>
+      </div>
+
+      <!-- Mobile -->
+      <div class="pages-wrapper d-sm-none">
+        <input type="number" [min]="1" [max]="paginatorState.totalPages" [value]="paginatorState.currentPage"/>
+        <button>z {{ paginatorState.totalPages }} stron</button>
+      </div>
+
+      <!-- Go to last page -->
+      <button class="clickable" (click)="onPageChange(paginatorState.totalPages)">
+        <i class="fas fa-angle-double-right"></i>
+      </button>
+
+    </div>
+  </div>
+</div>

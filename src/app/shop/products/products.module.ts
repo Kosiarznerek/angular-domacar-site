@@ -10,6 +10,7 @@ import {SearchCarPartsComponent} from './search/search-car-parts/search-car-part
 import {SearchWheelsComponent} from './search/search-wheels/search-wheels.component';
 import {SearchTiresComponent} from './search/search-tires/search-tires.component';
 import {SearchAccessoriesComponent} from './search/search-accessories/search-accessories.component';
+import {PaginatorComponent} from './paginator/paginator.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import {SearchAccessoriesComponent} from './search/search-accessories/search-acc
     SearchWheelsComponent,
     SearchTiresComponent,
     SearchAccessoriesComponent,
+    PaginatorComponent,
   ],
   imports: [
     CommonModule,

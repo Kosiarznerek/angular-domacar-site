@@ -1,0 +1,39 @@
+.pages-wrapper {
+  flex: 1;
+  text-align: center;
+}
+
+button, input {
+
+  padding: 0 20px;
+  border: none;
+  outline: none;
+  font-size: inherit;
+  line-height: 50px;
+  height: 50px;
+  border-radius: 0;
+  background: rgba(0, 0, 0, .05);
+  color: #2f2f2f;
+  font-weight: 700;
+  transition: background ease-in-out 250ms;
+  min-width: 56px;
+
+  &.active {
+    color: #2f2f2f;
+    background: #dadada;
+  }
+
+  &:not(.clickable) {
+    cursor: context-menu;
+  }
+
+  &.clickable:hover {
+    color: #3c5c9e;
+  }
+
+}
+
+input {
+  text-align: center;
+  width: 100px;
+}
