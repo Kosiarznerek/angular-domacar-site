@@ -1,4 +1,4 @@
-// Service details interface
+// Service product-details interface
 export interface IServiceDetails {
   iconName: string;
   title: string;

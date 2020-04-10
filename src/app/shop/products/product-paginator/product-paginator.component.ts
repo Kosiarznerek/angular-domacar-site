@@ -1,19 +1,19 @@
 import {Component, OnInit} from '@angular/core';
-import {IPaginatorState} from './paginator.component.models';
+import {IPaginatorState} from './product-paginator.component.models';
 
 @Component({
-  selector: 'app-paginator',
-  templateUrl: './paginator.component.html',
-  styleUrls: ['./paginator.component.scss']
+  selector: 'app-product-paginator',
+  templateUrl: './product-paginator.component.html',
+  styleUrls: ['./product-paginator.component.scss']
 })
-export class PaginatorComponent implements OnInit {
+export class ProductPaginatorComponent implements OnInit {
 
   // Component data
   public readonly paginatorState: IPaginatorState;
 
   constructor() {
 
-    // Create mocked paginator state
+    // Create mocked product-paginator state
     this.paginatorState = {
       currentPage: 1,
       totalPages: 10

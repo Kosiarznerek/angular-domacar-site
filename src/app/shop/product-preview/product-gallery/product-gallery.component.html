@@ -15,7 +15,7 @@
 </div>
 
 
-<!-- Images list -->
+<!-- Images product-list -->
 <div class="row" *ngIf="images.length > 1">
   <div class="col-12 images-list-wrapper">
     <i class="fas fa-angle-left" (click)="onCarouselPreviousButtonClick(owlCarousel)"></i>
@@ -30,5 +30,5 @@
   </div>
 </div>
 
-<!-- Light box gallery -->
+<!-- Light box product-gallery -->
 <ngx-image-gallery [images]="images" [conf]="galleryConfiguration"></ngx-image-gallery>

@@ -4,11 +4,11 @@ import {CarouselComponent, OwlOptions} from 'ngx-owl-carousel-o';
 import {SlideModel} from 'ngx-owl-carousel-o/lib/models/slide.model';
 
 @Component({
-  selector: 'app-gallery',
-  templateUrl: './gallery.component.html',
-  styleUrls: ['./gallery.component.scss']
+  selector: 'app-product-gallery',
+  templateUrl: './product-gallery.component.html',
+  styleUrls: ['./product-gallery.component.scss']
 })
-export class GalleryComponent implements OnInit {
+export class ProductGalleryComponent implements OnInit {
 
   // Configuration
   public readonly galleryConfiguration: GALLERY_CONF;
@@ -23,7 +23,7 @@ export class GalleryComponent implements OnInit {
 
   constructor() {
 
-    // Setting gallery configuration
+    // Setting product-gallery configuration
     this.galleryConfiguration = {
       imageOffset: '0px',
       showDeleteControl: false,
@@ -73,7 +73,7 @@ export class GalleryComponent implements OnInit {
   }
 
   /**
-   * Opens gallery on specific image
+   * Opens product-gallery on specific image
    * @param index Index of image to open
    */
   public openGallery(index: number = this.currentImageIndex): void {

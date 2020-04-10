@@ -1,12 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import {IProductsGenerals} from './general.component.models';
+import {IProductsGenerals} from './product-general.component.models';
 
 @Component({
-  selector: 'app-general',
-  templateUrl: './general.component.html',
-  styleUrls: ['./general.component.scss']
+  selector: 'app-product-general',
+  templateUrl: './product-general.component.html',
+  styleUrls: ['./product-general.component.scss']
 })
-export class GeneralComponent implements OnInit {
+export class ProductGeneralComponent implements OnInit {
 
   // Component data
   public productsGenerals: IProductsGenerals;

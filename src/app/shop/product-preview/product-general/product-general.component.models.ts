@@ -1,4 +1,4 @@
-// Products general information interface
+// Products product-general information interface
 export interface IProductsGenerals {
   displayName: string;
   rating: number; // 0-5

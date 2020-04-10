@@ -13,7 +13,7 @@ export class ServicesComponent implements OnInit {
 
   constructor() {
 
-    // Initialize service details
+    // Initialize service product-details
     this.servicesDetails = [
       {
         iconName: 'fas fa-tachometer-alt',

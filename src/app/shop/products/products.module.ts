@@ -2,28 +2,28 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {ProductsComponent} from './products.component';
 import {RouterModule} from '@angular/router';
-import {SearchComponent} from './search/search.component';
-import {ListComponent} from './list/list.component';
-import {RatingStarsComponent} from './list/rating-stars/rating-stars.component';
-import {DropdownComponent} from './search/dropdown/dropdown.component';
-import {SearchCarPartsComponent} from './search/search-car-parts/search-car-parts.component';
-import {SearchWheelsComponent} from './search/search-wheels/search-wheels.component';
-import {SearchTiresComponent} from './search/search-tires/search-tires.component';
-import {SearchAccessoriesComponent} from './search/search-accessories/search-accessories.component';
-import {PaginatorComponent} from './paginator/paginator.component';
+import {ProductSearchComponent} from './product-search/product-search.component';
+import {ProductListComponent} from './product-list/product-list.component';
+import {RatingStarsComponent} from './rating-stars/rating-stars.component';
+import {DropdownComponent} from './dropdown/dropdown.component';
+import {SearchCarPartsComponent} from './product-search/search-car-parts/search-car-parts.component';
+import {SearchWheelsComponent} from './product-search/search-wheels/search-wheels.component';
+import {SearchTiresComponent} from './product-search/search-tires/search-tires.component';
+import {SearchAccessoriesComponent} from './product-search/search-accessories/search-accessories.component';
+import {ProductPaginatorComponent} from './product-paginator/product-paginator.component';
 
 @NgModule({
   declarations: [
     ProductsComponent,
-    SearchComponent,
-    ListComponent,
+    ProductSearchComponent,
+    ProductListComponent,
     RatingStarsComponent,
     DropdownComponent,
     SearchCarPartsComponent,
     SearchWheelsComponent,
     SearchTiresComponent,
     SearchAccessoriesComponent,
-    PaginatorComponent,
+    ProductPaginatorComponent,
   ],
   imports: [
     CommonModule,

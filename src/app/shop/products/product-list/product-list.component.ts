@@ -3,14 +3,14 @@ import {ActivatedRoute} from '@angular/router';
 import {EShopCategory} from '../../../cart-store.service.models';
 import {map} from 'rxjs/operators';
 import {Observable} from 'rxjs';
-import {IProduct} from './list.component.models';
+import {IProduct} from './product-list.component.models';
 
 @Component({
-  selector: 'app-list',
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss']
+  selector: 'app-product-list',
+  templateUrl: './product-list.component.html',
+  styleUrls: ['./product-list.component.scss']
 })
-export class ListComponent implements OnInit {
+export class ProductListComponent implements OnInit {
 
   // Component data
   public shopCategory$: Observable<EShopCategory>;
@@ -20,7 +20,7 @@ export class ListComponent implements OnInit {
     private readonly _activatedRoute: ActivatedRoute,
   ) {
 
-    // Initialize products list
+    // Initialize products product-list
     this.productsList = new Array(16).fill(0).map((v, i) => ({
       id: i + 1,
       category: [

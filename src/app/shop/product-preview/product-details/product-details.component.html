@@ -1,0 +1,56 @@
+<!-- Details tabs -->
+<div class="row">
+  <div class="col-12">
+    <ul class="details-tabs">
+      <li [class.active]="activeDetailsTab === EDetailsTab.Description"
+          (click)="activeDetailsTab = EDetailsTab.Description">
+        Opis
+      </li>
+      <li [class.active]="activeDetailsTab === EDetailsTab.AdditionalInformation"
+          (click)="activeDetailsTab = EDetailsTab.AdditionalInformation">
+        Dodatkowe informacje
+      </li>
+      <li [class.active]="activeDetailsTab === EDetailsTab.Reviews"
+          (click)="activeDetailsTab = EDetailsTab.Reviews">
+        Opinie
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- Description -->
+<div class="row" *ngIf="activeDetailsTab === EDetailsTab.Description">
+  <div class="col-12">
+    <p [innerHTML]="productDetails.description"></p>
+  </div>
+</div>
+
+<!-- Additional information -->
+<div class="row" *ngIf="activeDetailsTab === EDetailsTab.AdditionalInformation">
+  <div class="col-12">
+    <p [innerHTML]="productDetails.additionalInformation"></p>
+  </div>
+</div>
+
+<!-- Reviews section -->
+<div class="row" *ngIf="activeDetailsTab === EDetailsTab.Reviews">
+  <div class="col-12">
+
+    <!-- Users review -->
+    <div class="review" *ngFor="let review of productDetails.reviews">
+      <i class="fas fa-user"></i>
+      <div class="comment-text">
+        <p class="review-meta">
+          <strong>{{ review.userName }}</strong>
+          <span> – </span>
+          <span>{{ review.publishedDate | date }}</span>
+        </p>
+        <app-rating-stars [currentValue]="review.rating" [maxValue]="5" [minValue]="0"></app-rating-stars>
+        <div class="review-description">{{ review.content }}</div>
+      </div>
+    </div>
+
+    <!-- Add review -->
+
+  </div>
+</div>

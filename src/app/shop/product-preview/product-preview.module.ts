@@ -5,19 +5,19 @@ import {CarouselModule} from 'ngx-owl-carousel-o';
 import {CommonModule} from '@angular/common';
 import {ProductPreviewComponent} from './product-preview.component';
 import {RouterModule} from '@angular/router';
-import {GalleryComponent} from './gallery/gallery.component';
-import {GeneralComponent} from './general/general.component';
-import {RatingStarsComponent} from './general/rating-stars/rating-stars.component';
-import {DetailsComponent} from './details/details.component';
-import {RelatedProductsComponent} from './related-products/related-products.component';
+import {ProductGalleryComponent} from './product-gallery/product-gallery.component';
+import {ProductGeneralComponent} from './product-general/product-general.component';
+import {RatingStarsComponent} from './rating-stars/rating-stars.component';
+import {ProductDetailsComponent} from './product-details/product-details.component';
+import {RelatedProductsComponent} from './product-related/related-products.component';
 
 @NgModule({
   declarations: [
     ProductPreviewComponent,
-    GalleryComponent,
-    GeneralComponent,
+    ProductGalleryComponent,
+    ProductGeneralComponent,
     RatingStarsComponent,
-    DetailsComponent,
+    ProductDetailsComponent,
     RelatedProductsComponent,
   ],
   imports: [
