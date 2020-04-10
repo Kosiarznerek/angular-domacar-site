@@ -34,12 +34,12 @@ export class ProductGeneralComponent implements OnInit {
         'Bosser',
         'Mossaco',
         'Black Cobiano'
-      ][Math.floor(Math.random() * 4)],
+      ][Math.floor(Math.random() * 3)],
       origin: [
         'Stany Zjednocznone',
         'Polska',
         'Niemcy'
-      ][Math.floor(Math.random() * 4)],
+      ][Math.floor(Math.random() * 3)],
       stockAmount: Math.floor(Math.random() * 100) + 100,
     };
 
