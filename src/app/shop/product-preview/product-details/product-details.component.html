@@ -41,7 +41,7 @@
       <i class="fas fa-user"></i>
       <div class="comment-text">
         <p class="review-meta">
-          <strong>{{ review.userName }}</strong>
+          <strong>{{ review.authorName }}</strong>
           <span> – </span>
           <span>{{ review.publishedDate | date }}</span>
         </p>
@@ -50,7 +50,55 @@
       </div>
     </div>
 
-    <!-- Add review -->
+    <!-- No reviews -->
+    <div class="no-review" *ngIf="productDetails.reviews.length === 0">
+      Brak dostępnych opinii o produkcie.
+    </div>
 
   </div>
+</div>
+
+<!-- Add review -->
+<div class="row add-review" *ngIf="activeDetailsTab === EDetailsTab.Reviews">
+
+  <!-- Caption -->
+  <div class="col-12">
+    <span class="caption">Dodaj swoją opinię</span>
+  </div>
+
+  <!-- Name -->
+  <div class="col-md-6 form-control-wrapper">
+    <label>Imię&nbsp;*</label>
+    <input type="text" value="" size="30" required="">
+  </div>
+
+  <!-- Surname -->
+  <div class="col-md-6 form-control-wrapper">
+    <label>Nazwisko</label>
+    <input type="text" value="" size="30" required="">
+  </div>
+
+  <!-- Rating -->
+  <div class="col-md-6 form-control-wrapper">
+    <label>Ocena (1-5)&nbsp;*</label>
+    <input type="number" value="" size="30" required="">
+  </div>
+
+  <!-- Email -->
+  <div class="col-md-6 form-control-wrapper">
+    <label>Adres email</label>
+    <input type="email" value="" size="30" required="">
+  </div>
+
+  <!-- Email -->
+  <div class="col-12 form-control-wrapper">
+    <label>Twoja opinia</label>
+    <textarea rows="8" required=""></textarea>
+  </div>
+
+  <!-- Submit -->
+  <div class="col-12">
+    <button type="button">Wyślij opinię</button>
+  </div>
+
 </div>

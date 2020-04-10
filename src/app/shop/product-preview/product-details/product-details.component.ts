@@ -21,7 +21,7 @@ export class ProductDetailsComponent implements OnInit {
   ngOnInit(): void {
 
     // Setting active product-details tab
-    this.activeDetailsTab = EDetailsTab.Description;
+    this.activeDetailsTab = EDetailsTab.Reviews;
 
     // Create mocked product product-details
     this.productDetails = {
@@ -66,7 +66,7 @@ export class ProductDetailsComponent implements OnInit {
         pulvinar dui. Duis non nulla ac mauris vehicula sodales.
       `,
       reviews: new Array(3).fill(0).map((v, i) => ({
-        userName: [
+        authorName: [
           'Aleksandra Majer',
           'Dominik Morkades',
           'Marek Kuźmiński'

@@ -93,3 +93,87 @@ p {
   }
 
 }
+
+.no-review {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.add-review {
+
+  margin-top: 25px;
+
+  .caption {
+    color: #2f2f2f;
+    display: block;
+    float: left;
+    width: 100%;
+    line-height: 1;
+    padding-top: 0;
+    padding-bottom: 20px;
+    margin-bottom: 0;
+    text-align: left;
+    margin-top: 0;
+    border-top: none;
+    letter-spacing: -0.3px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .form-control-wrapper {
+    margin-bottom: 10px;
+  }
+
+  input, textarea {
+    height: 48px;
+    padding: 15px 25px;
+    width: 100%;
+    outline: none;
+    line-height: 18px;
+    color: #333;
+    font-weight: bold;
+    font-size: 13px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    margin: 0;
+    resize: none;
+  }
+
+  textarea {
+    height: initial !important;
+  }
+
+  label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  button {
+
+    background-color: #3c5c9e;
+    color: #fff;
+    min-width: 170px;
+    font-size: 14px;
+    font-weight: 900;
+    padding: 16px 25px;
+    border: 2px solid #3c5c9e;
+    transition: 0.3s !important;
+    text-align: center;
+    margin: auto;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    line-height: 1;
+    cursor: pointer;
+    outline: 0;
+    text-decoration: none;
+    display: inline-block;
+
+    &:hover {
+      background: transparent;
+      color: #3c5c9e;
+    }
+
+  }
+
+}

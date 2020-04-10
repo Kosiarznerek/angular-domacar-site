@@ -14,7 +14,7 @@ export interface IProductDetails {
 
 // Product review interface
 export interface IProductReview {
-  userName: string;
+  authorName: string;
   content: string;
   rating: number; // 0-5
   publishedDate: Date;
