@@ -21,7 +21,7 @@ export class ProductDetailsComponent implements OnInit {
   ngOnInit(): void {
 
     // Setting active product-details tab
-    this.activeDetailsTab = EDetailsTab.Reviews;
+    this.activeDetailsTab = EDetailsTab.Description;
 
     // Create mocked product product-details
     this.productDetails = {
