@@ -20,7 +20,7 @@ export class PartnersComponent implements OnInit {
       loop: true,
       mouseDrag: true,
       touchDrag: true,
-      pullDrag: false,
+      pullDrag: true,
       dots: false,
       autoWidth: false,
       navSpeed: 1,

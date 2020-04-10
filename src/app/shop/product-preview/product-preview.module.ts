@@ -1,4 +1,7 @@
 import {NgModule} from '@angular/core';
+import {HammerModule} from '@angular/platform-browser';
+import {NgxImageGalleryModule} from 'ngx-image-gallery';
+import {CarouselModule} from 'ngx-owl-carousel-o';
 import {CommonModule} from '@angular/common';
 import {ProductPreviewComponent} from './product-preview.component';
 import {RouterModule} from '@angular/router';
@@ -17,6 +20,9 @@ import {RelatedProductsComponent} from './related-products/related-products.comp
   ],
   imports: [
     CommonModule,
+    HammerModule,
+    NgxImageGalleryModule,
+    CarouselModule,
     RouterModule.forChild([
       {path: '', component: ProductPreviewComponent}
     ])
