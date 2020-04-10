@@ -1,3 +1,41 @@
-<p>
-  Tu będą znajdowyły się podstawowe informacje o produkcie i możliwość dodania do koszyka
-</p>
+<div class="row">
+
+  <!-- Display name -->
+  <div class="col-12">
+    <h1 class="title">{{ productsGenerals.displayName }}</h1>
+  </div>
+
+  <!-- Ratings -->
+  <div class="col-12 ratings">
+    <app-rating-stars [currentValue]="productsGenerals.rating" [maxValue]="5" [minValue]="0"></app-rating-stars>
+    <span class="ratings-count">
+      (na podstawie {{ productsGenerals.reviewsAmount }} opinii)
+    </span>
+  </div>
+
+  <!-- Price -->
+  <div class="col-12 price">
+    <span>
+      {{ productsGenerals.price | number : '1.2-2' }} {{ productsGenerals.priceCurrency }}
+    </span>
+  </div>
+
+  <!-- Description -->
+  <div class="col-12 description">
+    <span>{{ productsGenerals.shortDescription }}</span>
+  </div>
+
+  <!-- Cart -->
+  <div class="col-12 cart">
+    <input type="number" step="1" min="1" max="" [value]="1" inputmode="numeric"/>
+    <button type="button">Do koszyka</button>
+  </div>
+
+  <!-- Meta data -->
+  <div class="col-12 meta-data">
+    <span>Marka: {{ productsGenerals.brand }}</span>
+    <span>Pochodzenie: {{ productsGenerals.origin }}</span>
+    <span>Dostępność: {{ productsGenerals.stockAmount }}</span>
+  </div>
+
+</div>

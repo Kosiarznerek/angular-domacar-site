@@ -9,3 +9,14 @@ section {
   text-align: left;
   line-height: 24px;
 }
+
+.gallery,
+.general,
+.details {
+  margin-bottom: 40px;
+}
+
+.general {
+  display: flex;
+  align-items: center;
+}

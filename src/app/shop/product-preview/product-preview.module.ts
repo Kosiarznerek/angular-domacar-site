@@ -7,6 +7,7 @@ import {ProductPreviewComponent} from './product-preview.component';
 import {RouterModule} from '@angular/router';
 import {GalleryComponent} from './gallery/gallery.component';
 import {GeneralComponent} from './general/general.component';
+import {RatingStarsComponent} from './general/rating-stars/rating-stars.component';
 import {DetailsComponent} from './details/details.component';
 import {RelatedProductsComponent} from './related-products/related-products.component';
 
@@ -15,6 +16,7 @@ import {RelatedProductsComponent} from './related-products/related-products.comp
     ProductPreviewComponent,
     GalleryComponent,
     GeneralComponent,
+    RatingStarsComponent,
     DetailsComponent,
     RelatedProductsComponent,
   ],
