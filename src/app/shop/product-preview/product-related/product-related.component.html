@@ -1,3 +1,66 @@
-<p>
-  Tu będą znajdowały się powiązane produkty
-</p>
+<!-- Title -->
+<div class="row">
+  <div class="col-12">
+    <h2>Powiązane produkty …</h2>
+  </div>
+</div>
+
+<!-- Related products -->
+<div class="row">
+  <div *ngFor="let product of relatedProducts" class="col-sm-6 col-lg-3">
+    <div class="product-wrapper" [routerLink]="'/shop/' + product.category + '/product-preview/' + product.id">
+
+      <!-- Image -->
+      <img [src]="product.imgSrc" alt="..."/>
+
+      <!-- Description -->
+      <div class="product-description">
+        <h2 class="product-name">{{ product.displayName }}</h2>
+        <p class="product-rating">
+          <app-rating-stars [currentValue]="product.rating" [maxValue]="5" [minValue]="0"></app-rating-stars>
+        </p>
+        <p class="product-price">
+          {{ product.price | number : '1.2-2' }} {{ product.priceCurrency }}
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Border -->
+<div class="row">
+  <div class="col-12">
+    <div class="border"></div>
+  </div>
+</div>
+
+<!-- Title -->
+<div class="row">
+  <div class="col-12">
+    <h2>Inni zakupili również …</h2>
+  </div>
+</div>
+
+<!-- Related products -->
+<div class="row">
+  <div *ngFor="let product of popularProducts" class="col-sm-6 col-lg-3">
+    <div class="product-wrapper" [routerLink]="'/shop/' + product.category + '/product-preview/' + product.id">
+
+      <!-- Image -->
+      <img [src]="product.imgSrc" alt="..."/>
+
+      <!-- Description -->
+      <div class="product-description">
+        <h2 class="product-name">{{ product.displayName }}</h2>
+        <p class="product-rating">
+          <app-rating-stars [currentValue]="product.rating" [maxValue]="5" [minValue]="0"></app-rating-stars>
+        </p>
+        <p class="product-price">
+          {{ product.price | number : '1.2-2' }} {{ product.priceCurrency }}
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>

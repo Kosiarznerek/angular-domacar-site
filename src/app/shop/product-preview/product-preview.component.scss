@@ -10,13 +10,17 @@ section {
   line-height: 24px;
 }
 
-.gallery,
-.general,
-.details {
+.gallery, .general {
   margin-bottom: 40px;
 }
 
 .general {
   display: flex;
   align-items: center;
+}
+
+.border {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
 }
