@@ -113,7 +113,7 @@ div.wrapper-container {
           transform: translateY(-10px);
         }
 
-        @media (min-width: $mobile-breakpoint) {
+        @media (min-width: $mobile-breakpoint + 1) {
           &:not(.dropdown) > a:hover::after {
             height: 3px;
             opacity: 1;
@@ -146,7 +146,7 @@ div.wrapper-container {
           list-style: none;
           background-clip: padding-box;
 
-          @media (min-width: $mobile-breakpoint) {
+          @media (min-width: $mobile-breakpoint + 1) {
             border: 1px solid rgba(0, 0, 0, .1);
             border-top-color: #3c5c9e;
             border-top-width: 3px;
@@ -190,7 +190,7 @@ div.wrapper-container {
 
         }
 
-        @media (min-width: $mobile-breakpoint) {
+        @media (min-width: $mobile-breakpoint + 1) {
           &:hover .dropdown-menu {
             opacity: 1;
             visibility: visible;
@@ -218,7 +218,7 @@ div.wrapper-container {
         text-decoration: none;
       }
 
-      @media (min-width: $mobile-breakpoint) {
+      @media (min-width: $mobile-breakpoint + 1) {
 
         position: relative;
 
@@ -280,7 +280,7 @@ div.wrapper-container {
 
       padding: 35px 0 29px 10px;
 
-      @media (min-width: $mobile-breakpoint) {
+      @media (min-width: $mobile-breakpoint + 1) {
         display: none;
       }
 

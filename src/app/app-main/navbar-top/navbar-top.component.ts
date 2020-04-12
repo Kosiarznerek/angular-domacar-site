@@ -77,8 +77,8 @@ export class NavbarTopComponent implements OnInit {
     ];
 
     // Add mobile breakpoint
-    this.isMobile$ = this._breakpointObserver.observe(['(min-width: 960px)']).pipe(
-      map(v => !v.matches)
+    this.isMobile$ = this._breakpointObserver.observe(['(max-width: 960px)']).pipe(
+      map(v => v.matches)
     );
 
     // Initialize cart menu
