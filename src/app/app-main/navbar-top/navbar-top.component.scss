@@ -1,4 +1,4 @@
-$mobile-breakpoint: 960px;
+$mobile-breakpoint: 991px;
 
 div.wrapper-container {
 
@@ -242,7 +242,6 @@ div.wrapper-container {
         cursor: initial;
         font-size: 14px;
         min-width: 337px;
-        transition: all 250ms ease-in-out;
         display: block;
         opacity: 0;
         visibility: hidden;
@@ -251,6 +250,7 @@ div.wrapper-container {
         border-top: 3px solid #3c5c9e;
         top: 93px;
         overflow: hidden;
+        transition: all 250ms ease-in-out;
 
         @media (max-width: $mobile-breakpoint) {
 
@@ -262,6 +262,7 @@ div.wrapper-container {
           padding: 0 !important;
           margin: 0 !important;
           border: 0;
+          transition: none;
 
           app-cart {
             display: block;

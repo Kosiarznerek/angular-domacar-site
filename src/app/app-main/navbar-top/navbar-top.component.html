@@ -12,7 +12,9 @@
         <div id="main-navigation">
 
           <!-- Main menu -->
-          <ul *ngIf="!isMenuToggledUp || !(isMobile$ | async)" [@slideUpDown]="isMenuToggledUp" id="main-menu">
+          <ul [class.d-lg-none]="(isMobile$ | async)" [class.d-none]="!(isMobile$ | async)"
+              [class.d-lg-block]="!(isMobile$ | async)" *ngIf="!isMenuToggledUp || !(isMobile$ | async)"
+              [@slideUpDown]="isMenuToggledUp" id="main-menu">
             <li (click)="menuItem.isExpanded = !menuItem.isExpanded" *ngFor="let menuItem of menuItems"
                 [class.dropdown]="menuItem.children?.length > 0">
 
@@ -21,7 +23,7 @@
                 {{ menuItem.displayName }}
               </a>
               <ng-template #noSubMenuLink>
-                <a [routerLinkActive]="'active'" [routerLink]="menuItem.href">
+                <a [routerLinkActive]="'active'" [routerLink]="menuItem.href" (click)="onMenuNavigate()">
                   {{ menuItem.displayName }}
                 </a>
               </ng-template>
@@ -31,7 +33,7 @@
                   [@slideUpDown]="menuItem.isExpanded"
                   class="dropdown-menu">
                 <li *ngFor="let subItem of menuItem.children">
-                  <a [routerLink]="subItem.href">{{ subItem.displayName }}</a>
+                  <a [routerLink]="subItem.href" (click)="onMenuNavigate()">{{ subItem.displayName }}</a>
                 </li>
               </ul>
 
@@ -46,7 +48,9 @@
             </a>
 
             <!-- Cart content -->
-            <div *ngIf="!isCartListToggledUp || !(isMobile$ | async)" [@slideUpDown]="isCartListToggledUp">
+            <div [class.d-lg-none]="(isMobile$ | async)" [class.d-none]="!(isMobile$ | async)"
+                 [class.d-lg-block]="!(isMobile$ | async)" *ngIf="!isCartListToggledUp || !(isMobile$ | async)"
+                 [@slideUpDown]="isCartListToggledUp">
               <app-cart></app-cart>
             </div>
 

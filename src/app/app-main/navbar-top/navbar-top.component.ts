@@ -77,9 +77,15 @@ export class NavbarTopComponent implements OnInit {
     ];
 
     // Add mobile breakpoint
-    this.isMobile$ = this._breakpointObserver.observe(['(max-width: 960px)']).pipe(
+    this.isMobile$ = this._breakpointObserver.observe(['(max-width: 991px)']).pipe(
       map(v => v.matches)
     );
+
+    // Subscribe to mobile changes
+    this.isMobile$.subscribe(isMobile => {
+      this.isCartListToggledUp = true;
+      this.isMenuToggledUp = true;
+    });
 
     // Initialize cart menu
     this.isCartListToggledUp = true;
@@ -110,6 +116,19 @@ export class NavbarTopComponent implements OnInit {
     }
 
     // Toggle menu
+    this.isMenuToggledUp = !this.isMenuToggledUp;
+
+  }
+
+  /**
+   * Executes when menu item has been navigated
+   */
+  public onMenuNavigate(): void {
+
+    // Hide menu with all submenus
+    this.menuItems
+      .filter((v: INavbarItem) => typeof v.isExpanded === 'boolean')
+      .forEach((v: INavbarItem) => v.isExpanded = false);
     this.isMenuToggledUp = !this.isMenuToggledUp;
 
   }
