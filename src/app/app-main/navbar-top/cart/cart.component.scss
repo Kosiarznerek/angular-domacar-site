@@ -44,8 +44,30 @@
     margin: 0;
     list-style: none;
     background: none;
-    display: inline-block;
+    display: flex;
     width: 100%;
+    align-items: center;
+
+    /* Remove button */
+    a.remove {
+
+      display: block;
+      font-size: 20px;
+      height: 1em;
+      width: 1em;
+      text-align: center;
+      line-height: 19px;
+      border-radius: 100%;
+      text-decoration: none;
+      font-weight: 700;
+      border: 0;
+
+      &:hover {
+        background-color: #3c5c9e;
+        color: #fff !important;
+      }
+
+    }
 
     /* Thumbnail */
     .cart-thumb {
@@ -56,6 +78,7 @@
       line-height: 24px;
       outline: 0;
       text-decoration: none;
+      cursor: context-menu;
 
       &:hover, &:focus, &:active {
         outline: 0;
@@ -63,7 +86,6 @@
       }
 
       img {
-        float: right;
         margin: 0;
         width: 65px;
         height: auto;
@@ -78,9 +100,9 @@
     /* Description */
     .cart-desc {
 
-      float: left;
-      width: calc(100% - 80px);
+      width: calc(100% - 115px);
       margin-right: 15px;
+      margin-left: 15px;
 
       .cart-item {
 
@@ -88,7 +110,6 @@
         font-weight: 700;
         display: block;
         line-height: 1;
-        margin-top: 15px;
         margin-bottom: 0;
         text-decoration: none;
         color: #2f2f2f !important;

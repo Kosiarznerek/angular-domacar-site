@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ICartData} from '../../../cart-store.service.models';
+import {ICartData, ICartProduct} from '../../../cart-store.service.models';
 import {Observable} from 'rxjs';
 import {CartStoreService} from '../../../cart-store.service';
 
@@ -23,6 +23,21 @@ export class CartComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  /**
+   * Executes on product remove button click
+   * @param event Event target
+   * @param product Product to remove
+   */
+  public onProductRemoveClick(event: MouseEvent, product: ICartProduct): void {
+
+    // Prevent default
+    event.preventDefault();
+
+    // Remove
+    this._cartStoreService.removeProduct(product.id);
+
   }
 
 }

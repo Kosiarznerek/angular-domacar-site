@@ -9,8 +9,8 @@
   <!-- Cart product-list -->
   <ul class="cart_list">
     <li *ngFor="let product of (cartData$ | async).products" class="cart-item-list">
-      <a (click)="$event.preventDefault()" class="cart-thumb" href="#">
-        <img [src]="product.imageSrc" alt="">
+      <a href="#" class="remove" (click)="onProductRemoveClick($event, product)">
+        ×
       </a>
       <div class="cart-desc">
         <a class="cart-item" [href]="'/shop/' + product.category + '/product-preview/' + product.id">
@@ -24,6 +24,9 @@
           </span>
         </span>
       </div>
+      <a (click)="$event.preventDefault()" class="cart-thumb" href="#">
+        <img [src]="product.imageSrc" alt="">
+      </a>
     </li>
   </ul>
 
