@@ -18,7 +18,7 @@
 <!-- Images product-list -->
 <div class="row" *ngIf="images.length > 1">
   <div class="col-12 images-list-wrapper">
-    <i class="fas fa-angle-left" (click)="onCarouselPreviousButtonClick(owlCarousel)"></i>
+    <i ontouchstart class="fas fa-angle-left" (click)="onCarouselPreviousButtonClick(owlCarousel)"></i>
     <owl-carousel-o [options]="carouselOptions" #owlCarousel>
       <ng-container *ngFor="let image of images; let i = index">
         <ng-template carouselSlide>
@@ -26,7 +26,7 @@
         </ng-template>
       </ng-container>
     </owl-carousel-o>
-    <i class="fas fa-angle-right" (click)="onCarouselNextButtonClick(owlCarousel)"></i>
+    <i ontouchstart class="fas fa-angle-right" (click)="onCarouselNextButtonClick(owlCarousel)"></i>
   </div>
 </div>
 

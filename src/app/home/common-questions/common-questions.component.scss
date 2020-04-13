@@ -40,16 +40,23 @@ input, textarea {
   box-shadow: none;
   letter-spacing: 0;
   outline: none;
-  line-height: 50px;
   padding: 0 5px;
   text-align: left;
   font-size: 14px;
   font-weight: 900;
   color: #ffffff;
   font-family: museo-sans;
-  resize: none;
   overflow: hidden;
-  height: auto;
+}
+
+input {
+  height: 50px;
+}
+
+textarea {
+  resize: none;
+  padding: 10px 5px;
+  height: 10em;
 }
 
 input::placeholder, textarea::placeholder {

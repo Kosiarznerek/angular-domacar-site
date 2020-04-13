@@ -7,7 +7,7 @@ import {filter, map, shareReplay} from 'rxjs/operators';
 import {EShopCategory} from '../../cart-store.service.models';
 import {NavigationEnd, Router} from '@angular/router';
 
-const SLIDE_UP_DOWN_TIMING = 250;
+const SLIDE_UP_DOWN_TIMING = 150;
 
 @Component({
   selector: 'app-navbar-top',
