@@ -27,8 +27,15 @@ button, input {
     cursor: context-menu;
   }
 
-  &.clickable:hover {
+  &.clickable:active,
+  &.clickable:focus {
     color: #3c5c9e;
+  }
+
+  @media (hover) {
+    &.clickable:hover {
+      color: #3c5c9e;
+    }
   }
 
 }

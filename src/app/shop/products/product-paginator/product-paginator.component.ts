@@ -53,6 +53,12 @@ export class ProductPaginatorComponent implements OnInit {
    */
   public onPageChange(newCurrentPage: number): void {
 
+    // Invalid page
+    if (newCurrentPage > this.paginatorState.totalPages || newCurrentPage <= 0) {
+      return;
+    }
+
+    // Update
     this.paginatorState.currentPage = newCurrentPage;
 
   }
