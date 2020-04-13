@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
+import {ScrollToModule} from '@nicky-lenaers/ngx-scroll-to';
 import {BannerComponent} from './banner/banner.component';
 import {SearchComponent} from './search/search.component';
 import {WhyUsComponent} from './why-us/why-us.component';
@@ -27,6 +28,7 @@ import {ShopCategoryToStringModule} from '../shop-category-to-string.module';
   ],
   imports: [
     CommonModule,
+    ScrollToModule.forRoot(),
     ShopCategoryToStringModule,
     RouterModule.forChild([
       {path: '', component: HomeComponent}

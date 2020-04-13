@@ -1,6 +1,7 @@
 import {Component, ElementRef, HostListener, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {interval, Subject} from 'rxjs';
 import {delay, map, takeUntil, tap} from 'rxjs/operators';
+import {ScrollToService} from '@nicky-lenaers/ngx-scroll-to';
 
 @Component({
   selector: 'app-banner',
@@ -14,7 +15,9 @@ export class BannerComponent implements OnInit, OnDestroy {
   @ViewChild('contentWrapper', {static: true}) contentWrapper: ElementRef;
   private readonly _ngOnDestroy$: Subject<void>;
 
-  constructor() {
+  constructor(
+    private readonly _scrollToService: ScrollToService
+  ) {
 
     // Create ngDestroy
     this._ngOnDestroy$ = new Subject<void>();
@@ -67,9 +70,9 @@ export class BannerComponent implements OnInit, OnDestroy {
 
     const element: HTMLElement = this.contentWrapper.nativeElement;
     const scrollY: number = element.clientHeight;
-    window.scrollTo({
-      top: scrollY,
-      behavior: 'smooth',
+    this._scrollToService.scrollTo({
+      offset: scrollY - window.scrollY,
+      easing: 'easeInOutQuad'
     });
 
   }
