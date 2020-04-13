@@ -3,8 +3,9 @@ import {INavbarItem, TNavbarItem} from './navbar-top.component.models';
 import {animate, style, transition, trigger} from '@angular/animations';
 import {BreakpointObserver} from '@angular/cdk/layout';
 import {Observable} from 'rxjs';
-import {map} from 'rxjs/operators';
+import {filter, map, shareReplay} from 'rxjs/operators';
 import {EShopCategory} from '../../cart-store.service.models';
+import {NavigationEnd, Router} from '@angular/router';
 
 const SLIDE_UP_DOWN_TIMING = 250;
 
@@ -28,13 +29,14 @@ const SLIDE_UP_DOWN_TIMING = 250;
 export class NavbarTopComponent implements OnInit {
 
   // Component data
-  public isMenuToggledUp: boolean;
   public readonly menuItems: TNavbarItem[];
   public readonly isMobile$: Observable<boolean>;
 
+  public isMenuToggledUp: boolean;
   public isCartListToggledUp: boolean;
 
   constructor(
+    private readonly _router: Router,
     private readonly _breakpointObserver: BreakpointObserver
   ) {
 
@@ -78,14 +80,9 @@ export class NavbarTopComponent implements OnInit {
 
     // Add mobile breakpoint
     this.isMobile$ = this._breakpointObserver.observe(['(max-width: 991px)']).pipe(
-      map(v => v.matches)
+      map(v => v.matches),
+      shareReplay(),
     );
-
-    // Subscribe to mobile changes
-    this.isMobile$.subscribe(isMobile => {
-      this.isCartListToggledUp = true;
-      this.isMenuToggledUp = true;
-    });
 
     // Initialize cart menu
     this.isCartListToggledUp = true;
@@ -93,6 +90,35 @@ export class NavbarTopComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    // Subscribe to mobile
+    this.isMobile$.subscribe(isMobile => {
+      this._toggleUpNavigation();
+    });
+
+    // Subscribe to route change
+    this._router.events.pipe(
+      filter(v => v instanceof NavigationEnd)
+    ).subscribe(() => {
+      this._toggleUpNavigation();
+    });
+
+  }
+
+  /**
+   * Toggles up cart and navigation menu
+   */
+  public _toggleUpNavigation(): void {
+
+    // Hide cart
+    this.isCartListToggledUp = true;
+
+    // Hide menu with all submenus
+    this.menuItems
+      .filter((v: INavbarItem) => typeof v.isExpanded === 'boolean')
+      .forEach((v: INavbarItem) => v.isExpanded = false);
+    this.isMenuToggledUp = true;
+
   }
 
   /**
@@ -116,19 +142,6 @@ export class NavbarTopComponent implements OnInit {
     }
 
     // Toggle menu
-    this.isMenuToggledUp = !this.isMenuToggledUp;
-
-  }
-
-  /**
-   * Executes when menu item has been navigated
-   */
-  public onMenuNavigate(): void {
-
-    // Hide menu with all submenus
-    this.menuItems
-      .filter((v: INavbarItem) => typeof v.isExpanded === 'boolean')
-      .forEach((v: INavbarItem) => v.isExpanded = false);
     this.isMenuToggledUp = !this.isMenuToggledUp;
 
   }

@@ -23,7 +23,7 @@
                 {{ menuItem.displayName }}
               </a>
               <ng-template #noSubMenuLink>
-                <a [routerLinkActive]="'active'" [routerLink]="menuItem.href" (click)="onMenuNavigate()">
+                <a [routerLinkActive]="'active'" [routerLink]="menuItem.href">
                   {{ menuItem.displayName }}
                 </a>
               </ng-template>
@@ -33,7 +33,7 @@
                   [@slideUpDown]="menuItem.isExpanded"
                   class="dropdown-menu">
                 <li *ngFor="let subItem of menuItem.children">
-                  <a [routerLink]="subItem.href" (click)="onMenuNavigate()">{{ subItem.displayName }}</a>
+                  <a [routerLink]="subItem.href">{{ subItem.displayName }}</a>
                 </li>
               </ul>
 

@@ -1,4 +1,4 @@
-[ ] Menu powinno się zwijać po zmianie obecnego route
+[x] Menu powinno się zwijać po zmianie obecnego route
 [ ] Nie mieści się "sprawdzonych" na głównej (RWD)
 [ ] Wyłączyć przybliżanie na inputach (RWD)
 [ ] Nie widać paginatora (RWD)
