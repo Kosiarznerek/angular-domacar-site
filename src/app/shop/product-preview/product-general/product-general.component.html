@@ -25,17 +25,17 @@
     <span>{{ productsGenerals.shortDescription }}</span>
   </div>
 
-  <!-- Cart -->
-  <div class="col-12 cart">
-    <input type="number" step="1" min="1" max="" [value]="1" inputmode="numeric"/>
-    <button ontouchstart type="button">Do koszyka</button>
-  </div>
-
   <!-- Meta data -->
   <div class="col-12 meta-data">
     <span>Marka: {{ productsGenerals.brand }}</span>
     <span>Pochodzenie: {{ productsGenerals.origin }}</span>
     <span>Dostępność: {{ productsGenerals.stockAmount }}</span>
+  </div>
+
+  <!-- Cart -->
+  <div class="col-12 cart">
+    <input type="number" step="1" min="1" max="" [value]="1" inputmode="numeric"/>
+    <button ontouchstart type="button">Do koszyka</button>
   </div>
 
 </div>

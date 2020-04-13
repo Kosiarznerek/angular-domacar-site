@@ -34,14 +34,26 @@
   font-weight: 100;
 }
 
-.cart {
+.meta-data {
 
   margin-bottom: 20px;
+
+  > span {
+    display: block;
+    font-weight: bold;
+    color: #2f2f2f;
+  }
+
+}
+
+.cart {
+
+  display: flex;
 
   input {
     color: #2f2f2f;
     height: 50px;
-    width: 80px;
+    max-width: 80px;
     background-color: #fff;
     border: 2px solid #e6e6e6;
     border-radius: 0;
@@ -76,6 +88,7 @@
     outline: 0;
     text-decoration: none;
     display: inline-block;
+    width: 100%;
 
     &:active, &:focus {
       background: transparent;
@@ -93,8 +106,3 @@
 
 }
 
-.meta-data > span {
-  display: block;
-  font-weight: bold;
-  color: #2f2f2f;
-}
