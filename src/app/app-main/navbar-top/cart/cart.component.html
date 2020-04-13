@@ -8,7 +8,7 @@
 
   <!-- Cart product-list -->
   <ul class="cart_list">
-    <li *ngFor="let product of (cartData$ | async).products; trackBy: trackByFunction" class="cart-item-list">
+    <li *ngFor="let product of (cartData$ | async).products; trackBy: trackCartItemBy" class="cart-item-list">
       <a ontouchstart href="#" class="remove" (click)="onProductRemoveClick($event, product)">
         ×
       </a>

@@ -45,7 +45,7 @@ export class CartComponent implements OnInit {
    * @param index Product index
    * @param item Product
    */
-  public trackByFunction(index: number, item: ICartProduct): number {
+  public trackCartItemBy(index: number, item: ICartProduct): number {
 
     return item.id;
 
