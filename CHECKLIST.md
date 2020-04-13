@@ -1,6 +1,6 @@
 [x] Menu powinno się zwijać po zmianie obecnego route
 [x] Nie mieści się "sprawdzonych" na głównej (RWD)
-[ ] Wyłączyć przybliżanie na inputach (RWD)
+[x] Wyłączyć przybliżanie na inputach (RWD)
 [ ] Nie widać paginatora (RWD)
 
 [ ] W koszyku przechowywać jedynie id i ilość produktu
