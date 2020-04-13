@@ -82,9 +82,16 @@ section {
         font-weight: 700;
         border: 0;
 
-        &:hover {
+        &:active, &:focus {
           background-color: #3c5c9e;
           color: #fff !important;
+        }
+
+        @media (hover) {
+          &:hover {
+            background-color: #3c5c9e;
+            color: #fff !important;
+          }
         }
 
       }
@@ -151,9 +158,16 @@ section {
     display: inline-block;
     width: 100%;
 
-    &:hover {
+    &:active, &:focus {
       color: #3c5c9e;
       background: transparent;
+    }
+
+    @media (hover) {
+      &:hover {
+        color: #3c5c9e;
+        background: transparent;
+      }
     }
 
   }

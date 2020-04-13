@@ -55,9 +55,16 @@ a {
   font-family: museo-sans;
   display: inline-block;
 
-  &:hover {
+  &:active, &:focus {
     background-color: #3c5c9e;
     color: #fff;
+  }
+
+  @media(hover) {
+    &:hover {
+      background-color: #3c5c9e;
+      color: #fff;
+    }
   }
 
   i {

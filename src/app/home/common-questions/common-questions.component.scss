@@ -57,7 +57,7 @@ input::placeholder, textarea::placeholder {
   color: rgba(255, 255, 255, .5);
 }
 
-a {
+button {
 
   letter-spacing: 0px;
   font-weight: 900;
@@ -80,9 +80,16 @@ a {
   display: block;
   background-color: #3c5c9e;
 
-  &:hover {
+  &:active, &:focus {
     color: #3c5c9e;
     background-color: #ffffff;
+  }
+
+  @media (hover) {
+    &:hover {
+      color: #3c5c9e;
+      background-color: #ffffff;
+    }
   }
 
 }

@@ -84,14 +84,22 @@
               margin-right: 20px;
             }
 
-            &:hover {
-
+            &:active, &:focus {
               background-color: #3c5c9e;
 
               > i {
                 color: #fff;
               }
+            }
 
+            @media (hover) {
+              &:hover {
+                background-color: #3c5c9e;
+
+                > i {
+                  color: #fff;
+                }
+              }
             }
 
           }
@@ -148,7 +156,7 @@
 
           }
 
-          input[type="submit"] {
+          button {
 
             @media (max-width: 779px) {
               width: 100%;
@@ -176,9 +184,16 @@
             -webkit-appearance: button;
             font-family: inherit;
 
-            &:hover {
+            &:active, &:focus {
               color: #3c5c9e;
               background: #fff !important;
+            }
+
+            @media (hover) {
+              &:hover {
+                color: #3c5c9e;
+                background: #fff !important;
+              }
             }
 
           }

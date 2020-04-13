@@ -79,9 +79,16 @@
       margin-right: 10px;
       display: inline-block;
 
-      &:hover {
+      &:active {
         color: #3c5c9e;
         background: transparent;
+      }
+
+      @media(hover) {
+        &:hover {
+          color: #3c5c9e;
+          background: transparent;
+        }
       }
 
     }
@@ -109,9 +116,16 @@
       text-decoration: none;
       display: inline-block;
 
-      &:hover {
+      &:active {
         color: #fff;
         background: transparent;
+      }
+
+      @media (hover) {
+        &:hover {
+          color: #fff;
+          background: transparent;
+        }
       }
 
     }

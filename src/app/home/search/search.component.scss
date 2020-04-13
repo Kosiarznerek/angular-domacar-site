@@ -51,7 +51,7 @@ h2 {
   text-align: center;
 }
 
-a {
+button {
 
   letter-spacing: 0px;
   font-weight: 900;
@@ -72,10 +72,18 @@ a {
   box-shadow: none;
   text-decoration: none;
   display: block;
+  width: 100%;
 
-  &:hover {
+  &:active {
     color: #fff;
     background: #3c5c9e;
+  }
+
+  @media (hover) {
+    &:hover {
+      color: #fff;
+      background: #3c5c9e;
+    }
   }
 
 }

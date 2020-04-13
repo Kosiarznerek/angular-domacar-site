@@ -77,9 +77,16 @@
     text-decoration: none;
     display: inline-block;
 
-    &:hover {
+    &:active, &:focus {
       background: transparent;
       color: #3c5c9e;
+    }
+
+    @media(hover) {
+      &:hover {
+        background: transparent;
+        color: #3c5c9e;
+      }
     }
 
   }

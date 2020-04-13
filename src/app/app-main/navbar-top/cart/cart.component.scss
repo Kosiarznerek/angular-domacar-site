@@ -181,9 +181,16 @@
     text-decoration: none;
     display: block;
 
-    &:hover {
+    &:active, &:focus {
       color: #fff;
       background: #3c5c9e;
+    }
+
+    @media(hover) {
+      &:hover {
+        color: #fff;
+        background: #3c5c9e;
+      }
     }
 
   }
