@@ -206,16 +206,15 @@ div.wrapper-container {
     #cart {
 
       float: left;
-      padding: 0 10px;
       margin: 0;
-      cursor: pointer;
-      padding-top: 35px;
-      padding-bottom: 29px;
+      display: flex;
 
       a {
         color: #2f2f2f;
         outline: 0;
         text-decoration: none;
+        cursor: pointer;
+        padding: 35px 10px 29px;
       }
 
       @media (min-width: $mobile-breakpoint + 1) {

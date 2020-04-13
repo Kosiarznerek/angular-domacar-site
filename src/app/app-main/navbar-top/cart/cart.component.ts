@@ -40,4 +40,15 @@ export class CartComponent implements OnInit {
 
   }
 
+  /**
+   * Track by function to ngFor
+   * @param index Product index
+   * @param item Product
+   */
+  public trackByFunction(index: number, item: ICartProduct): number {
+
+    return item.id;
+
+  }
+
 }
