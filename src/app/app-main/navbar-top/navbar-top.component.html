@@ -45,6 +45,9 @@
 
             <a (click)="onCartIconClick()">
               <i class="fas fa-shopping-cart"></i>
+              <span class="badge" [class.visible]="(cartProductsAmount$ | async) > 0">
+                {{ cartProductsAmount$ | async }}
+              </span>
             </a>
 
             <!-- Cart content -->

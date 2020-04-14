@@ -1,4 +1,4 @@
-[ ] Ilość przedmiotów przy ikonce koszyka
+[x] Ilość przedmiotów przy ikonce koszyka
 [ ] W koszyku przechowywać jedynie id i ilość produktu
 [ ] Możliwość dodawania produktu do koszyka z animacją "wędrowania produktu"
 [ ] Asynchroniczne ładowanie danych

@@ -6,6 +6,7 @@ import {Observable} from 'rxjs';
 import {filter, map, shareReplay} from 'rxjs/operators';
 import {EShopCategory} from '../../cart-store.service.models';
 import {NavigationEnd, Router} from '@angular/router';
+import {CartStoreService} from '../../cart-store.service';
 
 const SLIDE_UP_DOWN_TIMING = 150;
 
@@ -35,9 +36,12 @@ export class NavbarTopComponent implements OnInit {
   public isMenuToggledUp: boolean;
   public isCartListToggledUp: boolean;
 
+  public readonly cartProductsAmount$: Observable<number>;
+
   constructor(
     private readonly _router: Router,
-    private readonly _breakpointObserver: BreakpointObserver
+    private readonly _breakpointObserver: BreakpointObserver,
+    private readonly _cartStoreService: CartStoreService,
   ) {
 
     // Initialize menu
@@ -86,6 +90,12 @@ export class NavbarTopComponent implements OnInit {
 
     // Initialize cart menu
     this.isCartListToggledUp = true;
+
+    // Initialize cart products amount
+    this.cartProductsAmount$ = this._cartStoreService.data.pipe(
+      map(v => v.products.length),
+      shareReplay()
+    );
 
   }
 

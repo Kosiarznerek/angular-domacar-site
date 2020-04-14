@@ -210,11 +210,45 @@ div.wrapper-container {
       display: flex;
 
       a {
+
         color: #2f2f2f;
         outline: 0;
         text-decoration: none;
         cursor: pointer;
         padding: 35px 10px 29px;
+        position: relative;
+
+        .badge {
+
+          position: absolute;
+          right: -6px;
+          top: calc(50% - 10px);
+          transform: translateY(-50%);
+          font-size: 9px;
+          min-width: 15px;
+          height: 15px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: 900;
+          background: rgba(0, 0, 0, 0.1);
+          color: #3c5c9e;
+          padding: 0 2px;
+          opacity: 0;
+          transition: opacity ease-in-out 250ms;
+          border-radius: 100%;
+
+          &.visible {
+            opacity: 1;
+          }
+
+          @media (max-width: $mobile-breakpoint) {
+            right: -2px;
+            top: calc(50% - 8px);
+          }
+
+        }
+
       }
 
       @media (min-width: $mobile-breakpoint + 1) {
