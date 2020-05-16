@@ -44,7 +44,7 @@ export class PartnersComponent implements OnInit {
     // Create images
     this.carouselImages = new Array(6).fill(0).map((v, i) => ({
       id: (i + 1).toString(),
-      src: `./../../../../assets/images/about/partner-${i + 1}.png`,
+      src: `assets/images/about/partner-${i + 1}.png`,
       alt: 'Partner logo',
       title: 'Partner logo'
     }));

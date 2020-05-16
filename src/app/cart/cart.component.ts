@@ -84,12 +84,12 @@ export class CartComponent implements OnInit {
       case 'preview':
         return {
           displayName: 'Podgląd',
-          parallaxSource: '/assets/images/parallax/parallax1.jpg'
+          parallaxSource: 'assets/images/parallax/parallax1.jpg'
         };
       case 'checkout':
         return {
           displayName: 'Formularz wysyłkowy',
-          parallaxSource: '/assets/images/parallax/parallax2.jpg'
+          parallaxSource: 'assets/images/parallax/parallax2.jpg'
         };
     }
 

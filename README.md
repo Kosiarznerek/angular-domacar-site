@@ -1,7 +1,7 @@
 # DomaCar site
 DomCar project is an online store built using the framework Angular 9.The project is in progress. 
 It is currently at the stage of connecting to the backend using the [Database Manager](https://github.com/Kosiarznerek/nestjs-database-manager) project. 
-[Click here to see project.](https://kosiarznerek.github.io/angular-domacar-site/)
+[Click here to see project.](https://kosiarznerek.github.io/angular-domacar-site)
 
 # Screenshots
 ![Screenshot_0](https://raw.githubusercontent.com/Kosiarznerek/angular-domacar-site/master/screenshots/0.png)

@@ -84,32 +84,32 @@ export class GeneralsComponent implements OnInit {
       case 'about':
         return {
           displayName: 'O nas',
-          parallaxSource: '/assets/images/parallax/parallax1.jpg'
+          parallaxSource: 'assets/images/parallax/parallax1.jpg'
         };
       case 'contact':
         return {
           displayName: 'Kontakt',
-          parallaxSource: '/assets/images/parallax/parallax2.jpg'
+          parallaxSource: 'assets/images/parallax/parallax2.jpg'
         };
       case 'payments':
         return {
           displayName: 'Płatności',
-          parallaxSource: '/assets/images/parallax/parallax3.jpg'
+          parallaxSource: 'assets/images/parallax/parallax3.jpg'
         };
       case 'shipments':
         return {
           displayName: 'Dostawa',
-          parallaxSource: '/assets/images/parallax/parallax4.jpg'
+          parallaxSource: 'assets/images/parallax/parallax4.jpg'
         };
       case 'returns-complaints':
         return {
           displayName: 'Zwroty i reklamacje',
-          parallaxSource: '/assets/images/parallax/parallax1.jpg'
+          parallaxSource: 'assets/images/parallax/parallax1.jpg'
         };
       case 'privacy-policy':
         return {
           displayName: 'Polityka prywatności',
-          parallaxSource: '/assets/images/parallax/parallax2.jpg'
+          parallaxSource: 'assets/images/parallax/parallax2.jpg'
         };
     }
 

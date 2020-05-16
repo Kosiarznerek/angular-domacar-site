@@ -62,9 +62,9 @@ export class ProductGalleryComponent implements OnInit {
 
     // Setting mocked images
     this.images = new Array(16).fill(0).map((v, i) => ({
-      url: `/assets/images/products/product${i % 8 + 1}.png`,
+      url: `assets/images/products/product${i % 8 + 1}.png`,
       altText: 'two-woman-standing-on-the-ground-and-staring-at-the-mountain',
-      thumbnailUrl: `/assets/images/products/product${i % 8 + 1}.png`
+      thumbnailUrl: `assets/images/products/product${i % 8 + 1}.png`
     }));
 
     // Set current image index

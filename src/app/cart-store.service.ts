@@ -26,7 +26,7 @@ export class CartStoreService {
           EShopCategory.Wheels,
         ][Math.floor(Math.random() * 4)],
         displayName: `Przykładowy produkt testowy ${i + 1}`,
-        imageSrc: `../../../assets/images/products/product${i % 8 + 1}.png`,
+        imageSrc: `assets/images/products/product${i % 8 + 1}.png`,
         price: Math.floor(Math.random() * 1000) + 100,
         priceCurrency: 'zł',
         amount: Math.floor(Math.random() * 10) + 10
