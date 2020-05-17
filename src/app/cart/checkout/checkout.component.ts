@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {CartStoreService} from '../../cart-store.service';
 import {Observable} from 'rxjs';
-import {ICartData} from '../../cart-store.service.models';
+import {ICartProduct} from '../../cart-store.service.models';
 
 @Component({
   templateUrl: './checkout.component.html',
@@ -11,7 +11,7 @@ import {ICartData} from '../../cart-store.service.models';
 export class CheckoutComponent implements OnInit {
 
   // Component data
-  public readonly cartData$: Observable<ICartData>;
+  public readonly cartProducts$: Observable<ICartProduct[]>;
   public readonly form: FormGroup;
 
   constructor(
@@ -20,7 +20,7 @@ export class CheckoutComponent implements OnInit {
   ) {
 
     // Getting cart data
-    this.cartData$ = this._cartStoreService.data;
+    this.cartProducts$ = this._cartStoreService.data;
 
     // Create empty form
     this.form = this._formBuilder.group({

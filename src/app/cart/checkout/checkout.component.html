@@ -90,27 +90,23 @@
           </tr>
           </thead>
           <tbody>
-          <tr class="cart_item" *ngFor="let product of (cartData$ | async).products">
+          <tr class="cart_item" *ngFor="let product of (cartProducts$ | async)">
             <td class="product-name">
               {{ product.displayName }} x {{ product.amount }}
             </td>
             <td class="product-total">
-              {{ ((product.amount * product.price) | number : '1.2-2') + product.priceCurrency }}
+              {{ (product.amount * product.price) | number : '1.2-2' }} zł
             </td>
           </tr>
           </tbody>
           <tfoot>
           <tr class="cart-subtotal">
             <th>Cena produktów</th>
-            <th>
-              {{ ((cartData$ | async).sum | number : '1.2-2') + (cartData$ | async).sumCurrency }}
-            </th>
+            <th>XXX</th>
           </tr>
           <tr class="order-total">
             <th>Suma zamówienia</th>
-            <th>
-              {{ ((cartData$ | async).sum | number : '1.2-2') + (cartData$ | async).sumCurrency }}
-            </th>
+            <th>XXX</th>
           </tr>
           </tfoot>
         </table>

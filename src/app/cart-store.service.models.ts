@@ -1,20 +1,20 @@
-// Cart data interface
-export interface ICartData {
-  sum: number;
-  sumCurrency: string;
-  products: ICartProduct[];
+// Cart storage product interface
+export interface ICartStorageProduct {
+  id: number;
+  amount: number;
 }
 
-// Cart product interface
-export interface ICartProduct {
+// Cart product dto
+export interface ICartProductDto {
   id: number;
   category: EShopCategory;
   displayName: string;
   imageSrc: string;
   price: number;
-  priceCurrency: string;
-  amount: number;
 }
+
+// Cart product interface
+export type ICartProduct = ICartStorageProduct & ICartProductDto;
 
 // Shop category enum
 export enum EShopCategory {

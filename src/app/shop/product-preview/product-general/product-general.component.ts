@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {IProductsGenerals} from './product-general.component.models';
+import {CartStoreService} from '../../../cart-store.service';
 
 @Component({
   selector: 'app-product-general',
@@ -11,13 +12,16 @@ export class ProductGeneralComponent implements OnInit {
   // Component data
   public productsGenerals: IProductsGenerals;
 
-  constructor() {
+  constructor(
+    private readonly _cartStoreService: CartStoreService,
+  ) {
   }
 
   ngOnInit(): void {
 
     // Create mocked data
     this.productsGenerals = {
+      id: Math.floor(Math.random() * 10) + 1,
       displayName: 'Przykładowy produkt ze sklepu',
       rating: Math.floor(Math.random() * 2) + 3,
       reviewsAmount: Math.floor(Math.random() * 2) + 3,
@@ -42,6 +46,16 @@ export class ProductGeneralComponent implements OnInit {
       ][Math.floor(Math.random() * 3)],
       stockAmount: Math.floor(Math.random() * 100) + 100,
     };
+
+  }
+
+  /**
+   * Executes when add to cart button was clicked
+   * @param amount Product amount to add
+   */
+  public onAddToCartClick(amount: number): void {
+
+    this._cartStoreService.addProduct(this.productsGenerals.id, amount);
 
   }
 

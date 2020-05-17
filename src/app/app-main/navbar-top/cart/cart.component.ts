@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ICartData, ICartProduct} from '../../../cart-store.service.models';
+import {ICartProduct} from '../../../cart-store.service.models';
 import {Observable} from 'rxjs';
 import {CartStoreService} from '../../../cart-store.service';
+import {shareReplay} from 'rxjs/operators';
 
 @Component({
   selector: 'app-cart',
@@ -11,14 +12,16 @@ import {CartStoreService} from '../../../cart-store.service';
 export class CartComponent implements OnInit {
 
   // Component data
-  public readonly cartData$: Observable<ICartData>;
+  public readonly cartProducts$: Observable<ICartProduct[]>;
 
   constructor(
     private _cartStoreService: CartStoreService,
   ) {
 
     // Setting cart data
-    this.cartData$ = this._cartStoreService.data;
+    this.cartProducts$ = this._cartStoreService.data.pipe(
+      shareReplay()
+    );
 
   }
 

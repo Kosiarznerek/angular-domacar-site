@@ -34,8 +34,10 @@
 
   <!-- Cart -->
   <div class="col-12 cart">
-    <input type="number" step="1" min="1" max="" [value]="1" inputmode="numeric"/>
-    <button ontouchstart type="button">Do koszyka</button>
+    <input #amountInput type="number" step="1" min="1" max="" value="1" inputmode="numeric"/>
+    <button ontouchstart type="button" (click)="onAddToCartClick(+amountInput.value)">
+      Do koszyka
+    </button>
   </div>
 
 </div>

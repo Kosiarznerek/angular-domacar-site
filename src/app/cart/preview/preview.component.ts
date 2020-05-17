@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
-import {ICartData, ICartProduct} from '../../cart-store.service.models';
+import {ICartProduct} from '../../cart-store.service.models';
 import {CartStoreService} from '../../cart-store.service';
+import {shareReplay} from 'rxjs/operators';
 
 @Component({
   templateUrl: './preview.component.html',
@@ -10,14 +11,16 @@ import {CartStoreService} from '../../cart-store.service';
 export class PreviewComponent implements OnInit {
 
   // Component data
-  public readonly cartData$: Observable<ICartData>;
+  public readonly cartProducts$: Observable<ICartProduct[]>;
 
   constructor(
     private readonly _cartStoreService: CartStoreService,
   ) {
 
     // Getting cart data
-    this.cartData$ = this._cartStoreService.data;
+    this.cartProducts$ = this._cartStoreService.data.pipe(
+      shareReplay()
+    );
 
   }
 
@@ -48,7 +51,7 @@ export class PreviewComponent implements OnInit {
     const {id} = product;
 
     // Update
-    this._cartStoreService.updateProduct({id, amount});
+    this._cartStoreService.setProductAmount(id, amount);
 
   }
 

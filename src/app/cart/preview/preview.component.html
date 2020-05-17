@@ -1,5 +1,5 @@
 <!-- Empty cart -->
-<section *ngIf="(cartData$ | async).products.length === 0">
+<section *ngIf="(cartProducts$ | async)?.length === 0">
   <div class="container">
     <div class="row">
 
@@ -17,7 +17,7 @@
 </section>
 
 <!-- Cart view -->
-<section *ngIf="(cartData$ | async).products.length > 0">
+<section *ngIf="(cartProducts$ | async)?.length > 0">
   <div class="container">
     <div class="row">
 
@@ -34,7 +34,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr class="cart_item" *ngFor="let product of (cartData$ | async).products; trackBy: trackProductBy">
+        <tr class="cart_item" *ngFor="let product of (cartProducts$ | async); trackBy: trackProductBy">
           <td class="product-remove">
             <a ontouchstart href="#" class="remove" (click)="onProductRemoveClick($event, product)">×</a>
           </td>
@@ -47,14 +47,14 @@
             </a>
           </td>
           <td class="product-price d-none d-md-table-cell">
-            {{ (product.price | number : '1.2-2') + product.priceCurrency }}
+            {{ product.price | number : '1.2-2' }} zł
           </td>
           <td class="product-quantity">
             <input type="number" class="input-text" step="1" min="0" max="" [value]="product.amount"
                    (input)="onProductAmountUpdate($event, product)" inputmode="numeric"/>
           </td>
           <td class="product-subtotal d-none d-md-table-cell">
-            {{ ((product.amount * product.price) | number : '1.2-2') + product.priceCurrency }}
+            {{ (product.amount * product.price) | number : '1.2-2' }} zł
           </td>
         </tr>
         </tbody>
@@ -73,9 +73,7 @@
         </tr>
         <tr class="order-total">
           <th>Suma</th>
-          <td>
-            {{ ((cartData$ | async).sum | number : '1.2-2') + (cartData$ | async).sumCurrency }}
-          </td>
+          <td>XXX</td>
         </tr>
         </tbody>
       </table>

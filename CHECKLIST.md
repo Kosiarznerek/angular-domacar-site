@@ -1,8 +1,11 @@
 [x] Ilość przedmiotów przy ikonce koszyka
-[ ] W koszyku przechowywać jedynie id i ilość produktu
-[ ] Możliwość dodawania produktu do koszyka z animacją "wędrowania produktu"
-[ ] Asynchroniczne ładowanie danych
+[x] W koszyku przechowywać jedynie id i ilość produktu
+[ ] Ikona ładowania danych koszyka (top-bar, checkout, preview)
+[ ] Sumowanie produktów w koszyku
+[ ] Statyczna waluta przy produktach
 [ ] Dropdowny w wyszukiwarkach na głownej stronie
+[ ] Asynchroniczne ładowanie danych
+[ ] Dodawania produktu do koszyka z animacją "wędrowania produktu"
 
 [x] Menu powinno się zwijać po zmianie obecnego route
 [x] Nie mieści się "sprawdzonych" na głównej (RWD)

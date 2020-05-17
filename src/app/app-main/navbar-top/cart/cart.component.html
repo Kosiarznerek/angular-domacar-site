@@ -1,5 +1,5 @@
 <!-- Empty cart -->
-<p *ngIf="(cartData$ | async).products.length === 0; else cartTemplate" class="empty-cart">
+<p *ngIf="(cartProducts$ | async)?.length === 0; else cartTemplate" class="empty-cart">
   Koszyk jest pusty
 </p>
 
@@ -8,7 +8,7 @@
 
   <!-- Cart product-list -->
   <ul class="cart_list">
-    <li *ngFor="let product of (cartData$ | async).products; trackBy: trackCartItemBy" class="cart-item-list">
+    <li *ngFor="let product of (cartProducts$ | async); trackBy: trackCartItemBy" class="cart-item-list">
       <a ontouchstart href="#" class="remove" (click)="onProductRemoveClick($event, product)">
         ×
       </a>
@@ -19,8 +19,7 @@
         <span class="product-quantity">
           <span>{{ product.amount }} × </span>
           <span>
-            {{ product.price | number : '1.2-2' }}
-            {{ product.priceCurrency }}
+            {{ product.price | number : '1.2-2' }} zł
           </span>
         </span>
       </div>
@@ -33,10 +32,7 @@
   <!-- Subtotal -->
   <span class="subtotal">
       <strong>Suma:</strong>
-      <span class="amount">
-        {{ (cartData$ | async).sum | number : '1.2-2' }}
-        {{ (cartData$ | async).sumCurrency }}
-      </span>
+      <span class="amount">XXX</span>
   </span>
 
   <!-- Buttons -->

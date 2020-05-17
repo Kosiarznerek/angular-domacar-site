@@ -93,7 +93,7 @@ export class NavbarTopComponent implements OnInit {
 
     // Initialize cart products amount
     this.cartProductsAmount$ = this._cartStoreService.data.pipe(
-      map(v => v.products.length),
+      map(v => v.length),
       shareReplay()
     );
 
