@@ -14,7 +14,9 @@ export interface ICartProductDto {
 }
 
 // Cart product interface
-export type ICartProduct = ICartStorageProduct & ICartProductDto;
+export interface ICartProduct extends ICartStorageProduct, ICartProductDto {
+  contentLoaded: boolean;
+}
 
 // Shop category enum
 export enum EShopCategory {

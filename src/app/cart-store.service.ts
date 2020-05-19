@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {BehaviorSubject, Observable, of} from 'rxjs';
+import {BehaviorSubject, merge, Observable, of} from 'rxjs';
 import {EShopCategory, ICartProduct, ICartProductDto, ICartStorageProduct} from './cart-store.service.models';
-import {delay, map, switchMap, tap} from 'rxjs/operators';
+import {delay, filter, map, switchMap, tap} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -23,22 +23,43 @@ export class CartStoreService {
    */
   public get data(): Observable<ICartProduct[]> {
 
-    return this._cartProducts$.asObservable().pipe(
-      switchMap(cartProducts => !cartProducts.map(v => CartStoreService._IsCartStorageProduct(v)).includes(true)
-        ? of(cartProducts as ICartProduct[])
-        : this._getProductsDetails(cartProducts.filter(v => CartStoreService._IsCartStorageProduct(v))).pipe(
-          map(details => cartProducts.map(c => CartStoreService._IsCartStorageProduct(c)
-            ? Object.assign({}, c, details.find(d => d.id === c.id))
-            : c
-          )),
-          map(v => v.filter(p => !CartStoreService._IsCartStorageProduct(p))),
-          tap(v => {
-            this._cartProducts$.next(v);
-            CartStoreService._LocalStorage = v;
-          })
-        )
+    return merge(
+      this._cartProducts$.asObservable(), // products with loaded and unloaded content
+      this._cartProducts$.asObservable().pipe(
+        map(cartProducts => cartProducts.filter((v: ICartProduct) => !v.contentLoaded)), // products with unloaded content
+        filter(notLoadedProducts => notLoadedProducts.length > 0),
+        switchMap(notLoadedProducts => this._getProductsDetails(notLoadedProducts).pipe( // getting details for each unloaded products
+          map(details => this._cartProducts$.value
+            .filter((cartProduct: ICartProduct) => { // from current cart remove products with not found details
+              return cartProduct.contentLoaded || details.find(v => v.id === cartProduct.id) !== undefined;
+            })
+            .map((product: ICartProduct) => {
+              if (product.contentLoaded) { // product with loaded content -> return product
+                return product;
+              } else { // assign to product data from storage details
+                return Object.assign(
+                  product,
+                  details.find(v => v.id === product.id),
+                  {contentLoaded: true}
+                );
+              }
+            })
+          ),
+        )),
+        tap(v => {
+          this._cartProducts$.next(v);
+          CartStoreService._LocalStorage = v;
+        })
       ),
-    );
+    ).pipe(map((v: ICartProduct[]) => v.map(p => ({
+      id: p.id,
+      amount: p.amount,
+      contentLoaded: p.contentLoaded || false,
+      category: p.category,
+      displayName: p.displayName,
+      imageSrc: p.imageSrc,
+      price: p.price,
+    }))));
 
   }
 
@@ -117,18 +138,6 @@ export class CartStoreService {
   }
 
   /**
-   * Checks is product is from storage
-   * @param product Product to check
-   */
-  private static _IsCartStorageProduct(product: any): product is ICartStorageProduct {
-
-    return Object.keys(product || {}).length === 2 &&
-      typeof product.id === 'number' &&
-      typeof product.amount === 'number';
-
-  }
-
-  /**
    * Gets data from local storage
    */
   private static get _LocalStorage(): ICartStorageProduct[] {
@@ -170,7 +179,7 @@ export class CartStoreService {
       imageSrc: `assets/images/products/product${Math.floor(Math.random() * 8) + 1}.png`,
       price: Math.floor(Math.random() * 1000) + 100,
     }))).pipe(
-      delay(100_000)
+      delay(30_000)
     );
 
   }
