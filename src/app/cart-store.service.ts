@@ -51,7 +51,7 @@ export class CartStoreService {
           CartStoreService._LocalStorage = v;
         })
       ),
-    ).pipe(map((v: ICartProduct[]) => v.map(p => ({
+    ).pipe(map((v: ICartProduct[]) => v.map(p => ({ // map items to ICartProduct
       id: p.id,
       amount: p.amount,
       contentLoaded: p.contentLoaded || false,
@@ -60,6 +60,31 @@ export class CartStoreService {
       imageSrc: p.imageSrc,
       price: p.price,
     }))));
+
+  }
+
+  /**
+   * Gets products sum
+   */
+  public get productsSum(): Observable<number> {
+
+    return this._cartProducts$.pipe(
+      map(v => v.find((p: ICartProduct) => !p.contentLoaded)
+        ? null
+        : v.reduce((p: number, c: ICartProduct) => p += c.amount * c.price, 0)
+      )
+    );
+
+  }
+
+  /**
+   * Gets total products amount
+   */
+  public get productsAmount(): Observable<number> {
+
+    return this._cartProducts$.pipe(
+      map(v => v.reduce((p: number, c: ICartProduct) => p += c.amount, 0))
+    );
 
   }
 
@@ -179,7 +204,7 @@ export class CartStoreService {
       imageSrc: `assets/images/products/product${Math.floor(Math.random() * 8) + 1}.png`,
       price: Math.floor(Math.random() * 1000) + 100,
     }))).pipe(
-      delay(30_000)
+      delay(3_000)
     );
 
   }

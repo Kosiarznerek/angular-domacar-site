@@ -1,4 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {NgxSkeletonLoaderModule} from 'ngx-skeleton-loader';
+import {LayoutModule} from '@angular/cdk/layout';
 import {LOCALE_ID, NgModule} from '@angular/core';
 
 import {registerLocaleData} from '@angular/common';
@@ -9,8 +12,6 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app-main/app.component';
 import {NavbarTopComponent} from './app-main/navbar-top/navbar-top.component';
 import {FooterComponent} from './app-main/footer/footer.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {LayoutModule} from '@angular/cdk/layout';
 import {CartComponent} from './app-main/navbar-top/cart/cart.component';
 
 registerLocaleData(localePl, 'pl-PL', localePlExtra);
@@ -25,6 +26,7 @@ registerLocaleData(localePl, 'pl-PL', localePlExtra);
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    NgxSkeletonLoaderModule,
     AppRoutingModule,
     LayoutModule,
   ],

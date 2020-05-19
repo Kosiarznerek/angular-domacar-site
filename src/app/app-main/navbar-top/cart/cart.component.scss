@@ -82,6 +82,8 @@
       font-weight: bold;
       margin-bottom: 0;
       line-height: 24px;
+      width: 65px;
+      height: auto;
       outline: 0;
       text-decoration: none;
       cursor: context-menu;
@@ -93,8 +95,6 @@
 
       img {
         margin: 0;
-        width: 65px;
-        height: auto;
         box-shadow: none;
         border-radius: 0;
         max-width: 100%;

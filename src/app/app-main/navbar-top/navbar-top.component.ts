@@ -92,8 +92,7 @@ export class NavbarTopComponent implements OnInit {
     this.isCartListToggledUp = true;
 
     // Initialize cart products amount
-    this.cartProductsAmount$ = this._cartStoreService.data.pipe(
-      map(v => v.length),
+    this.cartProductsAmount$ = this._cartStoreService.productsAmount.pipe(
       shareReplay()
     );
 

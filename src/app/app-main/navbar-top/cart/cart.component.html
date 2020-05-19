@@ -9,30 +9,71 @@
   <!-- Cart product-list -->
   <ul class="cart_list">
     <li *ngFor="let product of (cartProducts$ | async); trackBy: trackCartItemBy" class="cart-item-list">
-      <a ontouchstart href="#" class="remove" (click)="onProductRemoveClick($event, product)">
-        ×
-      </a>
-      <div class="cart-desc">
-        <a class="cart-item" [href]="'/shop/' + product.category + '/product-preview/' + product.id">
-          {{ product.displayName }}
+
+      <!-- Normal template -->
+      <ng-container *ngIf="product.contentLoaded">
+        <a ontouchstart href="#" class="remove" (click)="onProductRemoveClick($event, product.id)">
+          ×
         </a>
-        <span class="product-quantity">
-          <span>{{ product.amount }} × </span>
-          <span>
-            {{ product.price | number : '1.2-2' }} zł
+        <div class="cart-desc">
+          <a class="cart-item" [href]="'/shop/' + product.category + '/product-preview/' + product.id">
+            {{ product.displayName }}
+          </a>
+          <span class="product-quantity">
+            <span>{{ product.amount }} × </span>
+            <span>
+              {{ product.price | number : '1.2-2' }} zł
+            </span>
           </span>
-        </span>
-      </div>
-      <a (click)="$event.preventDefault()" class="cart-thumb" href="#">
-        <img [src]="product.imageSrc" alt="">
-      </a>
+        </div>
+        <a (click)="$event.preventDefault()" class="cart-thumb" href="#">
+          <img [src]="product.imageSrc" alt="">
+        </a>
+      </ng-container>
+
+      <!-- Skeleton template -->
+      <ng-container *ngIf="!product.contentLoaded">
+        <a ontouchstart href="#" class="remove" (click)="onProductRemoveClick($event, product.id)">
+          ×
+        </a>
+        <div class="cart-desc">
+          <ngx-skeleton-loader [count]="2" [theme]="{
+              'height': '14px',
+              'margin-bottom': '0px'
+          }"></ngx-skeleton-loader>
+        </div>
+        <a (click)="$event.preventDefault()" class="cart-thumb" href="#">
+          <ngx-skeleton-loader [theme]="{
+               'height': '52px',
+               'width': '55px',
+               'margin': '5px 0 0px 10px'
+          }"></ngx-skeleton-loader>
+        </a>
+      </ng-container>
+
     </li>
   </ul>
 
   <!-- Subtotal -->
   <span class="subtotal">
       <strong>Suma:</strong>
-      <span class="amount">XXX</span>
+      <span class="amount">
+
+        <!-- Normal template -->
+        <ng-container *ngIf="(cartProductsSum$ | async) !== null">
+          {{ cartProductsSum$ | async | number : '1.2-2' }} zł
+        </ng-container>
+
+        <!-- Skeleton template -->
+        <ng-container *ngIf="(cartProductsSum$ | async) === null">
+          <ngx-skeleton-loader [theme]="{
+              'height': '14px',
+              'width': '40px',
+              'margin-bottom': '0px'
+          }"></ngx-skeleton-loader>
+        </ng-container>
+
+      </span>
   </span>
 
   <!-- Buttons -->
