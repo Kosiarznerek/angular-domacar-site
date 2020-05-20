@@ -171,6 +171,9 @@ ngx-image-gallery
 ngx-owl-carousel-o
 MIT
 
+ngx-skeleton-loader
+MIT
+
 regenerator-runtime
 MIT
 MIT License
