@@ -1,0 +1,101 @@
+.current-value {
+
+  display: flex;
+  border: 2px solid #3c5c9e;
+  background: #ffffff 0 0;
+  text-transform: inherit;
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 100%;
+  box-shadow: none;
+  letter-spacing: 0;
+  outline: none;
+  height: 56px;
+  padding: 0 5px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 900;
+  color: #333;
+  font-family: museo-sans;
+  resize: none;
+  overflow: hidden;
+  align-items: center;
+  margin-bottom: 0;
+  cursor: pointer;
+
+  &.placeholder {
+    color: #757575;
+  }
+
+  span {
+    flex: 1;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-right: 20px;
+  }
+
+  i {
+    display: flex;
+  }
+
+}
+
+.all-values-wrapper {
+
+  position: relative;
+  z-index: 1;
+
+  ul {
+
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border: 2px solid #3c5c9e;
+    border-top: 0;
+    background: #ffffff 0 0;
+    opacity: 1;
+    max-height: 200px;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: white;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #3c5c9e;
+    }
+
+    li {
+
+      width: 100%;
+      padding: 0 20px;
+      line-height: 50px;
+      height: 50px;
+      margin-top: 0;
+      border-radius: 0;
+      cursor: pointer;
+      font-weight: 900;
+      color: #333;
+      font-family: museo-sans;
+
+      &:not(:first-child) {
+        border-top: 2px solid white;
+      }
+
+      &:hover {
+        color: #3c5c9e;
+      }
+
+    }
+
+  }
+
+}

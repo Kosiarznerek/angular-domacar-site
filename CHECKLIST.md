@@ -3,7 +3,7 @@
 [x] Ikona ładowania danych koszyka (top-bar, checkout, preview)
 [x] Sumowanie produktów w koszyku
 [x] Statyczna waluta przy produktach
-[ ] Dropdowny w wyszukiwarkach na głownej stronie
+[x] Dropdowny w wyszukiwarkach na głownej stronie
 [ ] Asynchroniczne ładowanie danych
 [ ] Dodawania produktu do koszyka z animacją "wędrowania produktu"
 

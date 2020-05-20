@@ -10,9 +10,10 @@ import {CommonQuestionsComponent} from './common-questions/common-questions.comp
 import {HomeComponent} from './home.component';
 import {RouterModule} from '@angular/router';
 import {ServicesIconsComponent} from './services-icons/services-icons.component';
-import {RatingStarsComponent} from './latest-products/rating-stars/rating-stars.component';
+import {RatingStarsComponent} from './rating-stars/rating-stars.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {ShopCategoryToStringModule} from '../shop-category-to-string.module';
+import {DropdownComponent} from './dropdown/dropdown.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import {ShopCategoryToStringModule} from '../shop-category-to-string.module';
     HomeComponent,
     ServicesIconsComponent,
     RatingStarsComponent,
+    DropdownComponent,
   ],
   imports: [
     CommonModule,

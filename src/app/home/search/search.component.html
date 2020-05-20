@@ -25,13 +25,25 @@
         <h2>Części do pojazdu</h2>
         <div class="row">
           <div class="col-md-4">
-            <input placeholder="Marka" type="dropdown"/>
+            <app-dropdown [placeholder]="'Marka'" [values]="[
+                { displayName: 'BMW', value: 1 },
+                { displayName: 'Opel', value: 2 },
+                { displayName: 'Audi', value: 3 }
+            ]"></app-dropdown>
           </div>
           <div class="col-md-4">
-            <input placeholder="Model" type="dropdown"/>
+            <app-dropdown [placeholder]="'Model'" [values]="[
+                { displayName: 'BMW', value: 1 },
+                { displayName: 'Opel', value: 2 },
+                { displayName: 'Audi', value: 3 }
+            ]"></app-dropdown>
           </div>
           <div class="col-md-4">
-            <input placeholder="Typ" type="dropdown"/>
+            <app-dropdown [placeholder]="'Typ'" [values]="[
+                { displayName: 'BMW', value: 1 },
+                { displayName: 'Opel', value: 2 },
+                { displayName: 'Audi', value: 3 }
+            ]"></app-dropdown>
           </div>
         </div>
         <button ontouchstart>
