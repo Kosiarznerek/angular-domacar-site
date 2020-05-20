@@ -32,7 +32,6 @@ export class ProductListComponent implements OnInit {
       displayName: 'Przykładowy produkt ze sklepu',
       rating: Math.floor(Math.random() * 2) + 3,
       price: Math.floor(Math.random() * 100) + 100,
-      priceCurrency: 'zł',
       imgSrc: `assets/images/products/product${(i % 8) + 1}.png`
     }));
 

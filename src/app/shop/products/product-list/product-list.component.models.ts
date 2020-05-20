@@ -7,6 +7,5 @@ export interface IProduct {
   displayName: string;
   rating: number; // 0-5
   price: number;
-  priceCurrency: string;
   imgSrc: string;
 }

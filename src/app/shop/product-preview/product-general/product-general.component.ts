@@ -26,7 +26,6 @@ export class ProductGeneralComponent implements OnInit {
       rating: Math.floor(Math.random() * 2) + 3,
       reviewsAmount: Math.floor(Math.random() * 2) + 3,
       price: Math.floor(Math.random() * 100) + 100,
-      priceCurrency: 'zł',
       shortDescription: `
         Pellentesque habitant morbi tristique senectus et netus et
         malesuada fames ac turpis egestas. Vestibulum tortor quam,

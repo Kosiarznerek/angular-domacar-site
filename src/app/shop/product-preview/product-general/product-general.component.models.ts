@@ -5,7 +5,6 @@ export interface IProductsGenerals {
   rating: number; // 0-5
   reviewsAmount: number;
   price: number;
-  priceCurrency: string;
   shortDescription: string;
   brand: string;
   origin: string;
