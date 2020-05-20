@@ -204,7 +204,7 @@ export class CartStoreService {
       imageSrc: `assets/images/products/product${Math.floor(Math.random() * 8) + 1}.png`,
       price: Math.floor(Math.random() * 1000) + 100,
     }))).pipe(
-      delay(3_000)
+      delay(Math.random() * 100 + 200)
     );
 
   }

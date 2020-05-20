@@ -102,11 +102,11 @@
           <tfoot>
           <tr class="cart-subtotal">
             <th>Cena produktów</th>
-            <th>XXX</th>
+            <th>{{ cartProductsSum$ | async | number : '1.2-2' }} zł</th>
           </tr>
           <tr class="order-total">
             <th>Suma zamówienia</th>
-            <th>XXX</th>
+            <th>{{ cartProductsSum$ | async | number : '1.2-2' }} zł</th>
           </tr>
           </tfoot>
         </table>

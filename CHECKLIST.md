@@ -1,7 +1,7 @@
 [x] Ilość przedmiotów przy ikonce koszyka
 [x] W koszyku przechowywać jedynie id i ilość produktu
-[ ] Ikona ładowania danych koszyka (top-bar, checkout, preview)
-[ ] Sumowanie produktów w koszyku
+[x] Ikona ładowania danych koszyka (top-bar, checkout, preview)
+[x] Sumowanie produktów w koszyku
 [ ] Statyczna waluta przy produktach
 [ ] Dropdowny w wyszukiwarkach na głownej stronie
 [ ] Asynchroniczne ładowanie danych

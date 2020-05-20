@@ -12,6 +12,7 @@ export class PreviewComponent implements OnInit {
 
   // Component data
   public readonly cartProducts$: Observable<ICartProduct[]>;
+  public readonly cartProductsSum$: Observable<number>;
 
   constructor(
     private readonly _cartStoreService: CartStoreService,
@@ -19,6 +20,9 @@ export class PreviewComponent implements OnInit {
 
     // Getting cart data
     this.cartProducts$ = this._cartStoreService.data.pipe(
+      shareReplay()
+    );
+    this.cartProductsSum$ = this._cartStoreService.productsSum.pipe(
       shareReplay()
     );
 

@@ -73,7 +73,7 @@
         </tr>
         <tr class="order-total">
           <th>Suma</th>
-          <td>XXX</td>
+          <td>{{ cartProductsSum$ | async | number : '1.2-2' }} zł</td>
         </tr>
         </tbody>
       </table>

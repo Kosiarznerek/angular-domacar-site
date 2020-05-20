@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {CartStoreService} from '../../cart-store.service';
 import {Observable} from 'rxjs';
 import {ICartProduct} from '../../cart-store.service.models';
+import {shareReplay} from 'rxjs/operators';
 
 @Component({
   templateUrl: './checkout.component.html',
@@ -12,6 +13,7 @@ export class CheckoutComponent implements OnInit {
 
   // Component data
   public readonly cartProducts$: Observable<ICartProduct[]>;
+  public readonly cartProductsSum$: Observable<number>;
   public readonly form: FormGroup;
 
   constructor(
@@ -20,7 +22,12 @@ export class CheckoutComponent implements OnInit {
   ) {
 
     // Getting cart data
-    this.cartProducts$ = this._cartStoreService.data;
+    this.cartProducts$ = this._cartStoreService.data.pipe(
+      shareReplay()
+    );
+    this.cartProductsSum$ = this._cartStoreService.productsSum.pipe(
+      shareReplay()
+    );
 
     // Create empty form
     this.form = this._formBuilder.group({

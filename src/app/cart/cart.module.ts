@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {CartComponent} from './cart.component';
 import {RouterModule} from '@angular/router';
+import {CartResolver} from './cart.module.resolver';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,7 @@ import {RouterModule} from '@angular/router';
     CommonModule,
     RouterModule.forChild([
       {
-        path: '', component: CartComponent, children: [
+        path: '', component: CartComponent, resolve: {cartProductsLoaded: CartResolver}, children: [
           {
             path: 'preview',
             pathMatch: 'full',
